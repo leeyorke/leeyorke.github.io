@@ -6,4 +6,4 @@
 ### 🐱‍🚀社交平台
 * gitee: https://gitee.com/lee_yorke
 * csdn: https://blog.csdn.net/weixin_44200553
-* 个人博客: https://cuckooman.github.io/
+* 个人博客: https://leeyorke.github.io/
