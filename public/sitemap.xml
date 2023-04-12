@@ -1,0 +1,15 @@
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>http://leeyorke.github.io/</loc><lastmod>2023-04-11T20:17:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/posts/</loc><lastmod>2023-04-11T20:17:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/strings-replace/</loc><lastmod>2023-04-11T20:17:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/requests/</loc><lastmod>2023-04-11T15:10:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://leeyorke.github.io/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://leeyorke.github.io/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://leeyorke.github.io/tags/installation/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://leeyorke.github.io/tags/content/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://leeyorke.github.io/tags/configuration/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://leeyorke.github.io/categories/documentation/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
