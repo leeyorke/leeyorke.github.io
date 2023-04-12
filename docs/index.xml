@@ -3,9 +3,17 @@
         <title>⛷leeyorke的个人博客</title>
         <link>http://leeyorke.github.io/</link>
         <description>这是我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 11 Apr 2023 20:17:11 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</lastBuildDate>
             <atom:link href="http://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>postman脚本使用正则提取变量</title>
+    <link>http://leeyorke.github.io/postman/</link>
+    <pubDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>http://leeyorke.github.io/postman/</guid>
+    <description><![CDATA[遇到的坑 假设接口resp响应如下，我们要提取里面的sessionId ，因为resp里面包含\字符。所以需要在\前面加\形成\\才能正确提取 1]]></description>
+</item>
+<item>
     <title>字符串变量替换</title>
     <link>http://leeyorke.github.io/strings-replace/</link>
     <pubDate>Tue, 11 Apr 2023 20:17:11 &#43;0800</pubDate>

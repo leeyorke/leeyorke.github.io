@@ -2,8 +2,9 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://leeyorke.github.io/</loc><lastmod>2023-04-12T18:40:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://leeyorke.github.io/posts/</loc><lastmod>2023-04-12T18:40:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/</loc><lastmod>2023-04-12T20:23:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/postman/</loc><lastmod>2023-04-12T20:23:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://leeyorke.github.io/posts/</loc><lastmod>2023-04-12T20:23:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://leeyorke.github.io/strings-replace/</loc><lastmod>2023-04-12T18:40:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://leeyorke.github.io/requests/</loc><lastmod>2023-04-12T18:40:03&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://leeyorke.github.io/about/</loc><lastmod>2023-04-12T18:54:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
