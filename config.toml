@@ -72,15 +72,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       name = "关于"
       url = "/about/"
       title = ""
-  [[menu.main]]
-      parent = "关于"
-      weight = 1
-      identifier = "me"
-      pre = "😎"
-      post = ""
-      name = "关于我"
-      url = "/about/me/"
-      title = ""
 
 [params]
   enableGitInfo = true
