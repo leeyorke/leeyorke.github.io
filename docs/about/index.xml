@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on leeyorke的个人博客</title>
+    <link>https://leeyorke.github.io/about/</link>
+    <description>Recent content in Abouts on leeyorke的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+    <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster>
+    <lastBuildDate>Thu, 13 Apr 2023 14:36:49 +0800</lastBuildDate><atom:link href="https://leeyorke.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>普鲁斯特问卷｜人生35问</title>
+      <link>https://leeyorke.github.io/about/proust/</link>
+      <pubDate>Thu, 13 Apr 2023 14:36:49 +0800</pubDate>
+      <author>lee_yorke@outlook.com (leeyorke)</author>
+      <guid>https://leeyorke.github.io/about/proust/</guid>
+      <description>01 What is your idea of perfect happiness ? 你认为最完美的幸福是怎样的？ 包容性的社会，尊重子女但懂得追求自身幸福的父母，勇敢并为理想奋不顾身的我。 02 What is your greatest fear ? 你最大</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://leeyorke.github.io/about/me/</link>
+      <pubDate>Fri, 02 Aug 2019 11:04:49 +0800</pubDate>
+      <author>lee_yorke@outlook.com (leeyorke)</author>
+      <guid>https://leeyorke.github.io/about/me/</guid>
+      <description>😁关于我 我叫cuckooman。 1996 出生于陕西宝鸡的一个农村家庭，有个妹妹，爷爷奶奶在我三岁的时候就去世了， 因此相对别的发小来说没有体会过爷爷</description>
+    </item>
+    
+  </channel>
+</rss>
