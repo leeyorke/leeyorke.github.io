@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://leeyorke.github.io/sitemap.xml
+Sitemap: https://leeyorke.github.io/sitemap.xml

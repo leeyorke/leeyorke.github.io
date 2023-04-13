@@ -1,32 +1,33 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>⛷leeyorke的个人博客</title>
-        <link>http://leeyorke.github.io/</link>
-        <description>这是我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</lastBuildDate>
-            <atom:link href="http://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <title>leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/</link>
+        <description>leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</lastBuildDate>
+            <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>postman脚本使用正则提取变量</title>
-    <link>http://leeyorke.github.io/postman/</link>
+    <link>https://leeyorke.github.io/postman/</link>
     <pubDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</pubDate>
     <author>leeyorke</author>
-    <guid>http://leeyorke.github.io/postman/</guid>
+    <guid>https://leeyorke.github.io/postman/</guid>
     <description><![CDATA[遇到的坑 假设接口resp响应如下，我们要提取里面的sessionId ，因为resp里面包含\字符。所以需要在\前面加\形成\\才能正确提取 1]]></description>
 </item>
 <item>
     <title>字符串变量替换</title>
-    <link>http://leeyorke.github.io/strings-replace/</link>
+    <link>https://leeyorke.github.io/strings-replace/</link>
     <pubDate>Tue, 11 Apr 2023 20:17:11 &#43;0800</pubDate>
     <author>leeyorke</author>
-    <guid>http://leeyorke.github.io/strings-replace/</guid>
+    <guid>https://leeyorke.github.io/strings-replace/</guid>
     <description><![CDATA[需求 在yaml中需要引用自定义变量，我们参照 postman，约定变量符号为 {{}}。 思路 我们知道在 python 中字符串格式化可以通过 .format() 方法来处理。 比如]]></description>
 </item>
 <item>
     <title>python | 详解read、readline、readlines区别</title>
-    <link>http://leeyorke.github.io/requests/</link>
+    <link>https://leeyorke.github.io/requests/</link>
     <pubDate>Tue, 11 Apr 2023 15:10:11 &#43;0800</pubDate>
     <author>leeyorke</author>
-    <guid>http://leeyorke.github.io/requests/</guid>
+    <guid>https://leeyorke.github.io/requests/</guid>
     <description><![CDATA[看了很多博主写的文章，感觉解释的不是很详细，本文结合实际操作详细记录了个人对于read、readline、readlines用法的剖解过程。]]></description>
 </item>
 </channel>

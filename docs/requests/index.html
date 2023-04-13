@@ -4,22 +4,20 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>python | 详解read、readline、readlines区别 - ⛷leeyorke的个人博客</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="python | 详解read、readline、readlines区别" />
+        <title>python | 详解read、readline、readlines区别 - leeyorke的个人博客</title><meta name="Description" content="leeyorke的个人博客"><meta property="og:title" content="python | 详解read、readline、readlines区别" />
 <meta property="og:description" content="看了很多博主写的文章，感觉解释的不是很详细，本文结合实际操作详细记录了个人对于read、readline、readlines用法的剖解过程。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://leeyorke.github.io/requests/" /><meta property="og:image" content="http://leeyorke.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://leeyorke.github.io/requests/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-04-11T15:10:11+08:00" />
-<meta property="article:modified_time" content="2023-04-12T18:40:03+08:00" /><meta property="og:site_name" content="我的网站" />
+<meta property="article:modified_time" content="2023-04-13T14:17:43+08:00" /><meta property="og:site_name" content="leeyorke" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://leeyorke.github.io/logo.png"/>
+<meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="python | 详解read、readline、readlines区别"/>
 <meta name="twitter:description" content="看了很多博主写的文章，感觉解释的不是很详细，本文结合实际操作详细记录了个人对于read、readline、readlines用法的剖解过程。"/>
 <meta name="application-name" content="leeyorke">
-<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://leeyorke.github.io/requests/" /><link rel="next" href="http://leeyorke.github.io/strings-replace/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/requests/" /><link rel="next" href="https://leeyorke.github.io/strings-replace/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -29,9 +27,9 @@
         "inLanguage": "zh-cn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/leeyorke.github.io\/requests\/"
-        },"genre": "posts","wordcount":  1005 ,
-        "url": "http:\/\/leeyorke.github.io\/requests\/","datePublished": "2023-04-11T15:10:11+08:00","dateModified": "2023-04-12T18:40:03+08:00","publisher": {
+            "@id": "https:\/\/leeyorke.github.io\/requests\/"
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "python","wordcount":  1005 ,
+        "url": "https:\/\/leeyorke.github.io\/requests\/","datePublished": "2023-04-11T15:10:11+08:00","dateModified": "2023-04-13T14:17:43+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -44,10 +42,10 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="⛷leeyorke的个人博客"><span class="header-title-pre">🚀</span>leeyorke的个人博客</a>
+            <a href="/" title="leeyorke的个人博客"><span class="header-title-pre">🌻</span>🅲🆄🅲🅺🅾🅾🅼🅰🅽</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/">📃 文章 </a><a class="menu-item" href="/tags/">🏷 标签 </a><a class="menu-item" href="/categories/">📁 分类 </a><a class="menu-item" href="/about/">😎 关于我 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📃 文章 </a><a class="menu-item" href="/tags/">🏷 标签 </a><a class="menu-item" href="/categories/">📁 分类 </a><a class="menu-item" href="/about/">😎 关于 </a><a class="menu-item" href="/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -67,7 +65,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="⛷leeyorke的个人博客"><span class="header-title-pre">🚀</span>leeyorke的个人博客</a>
+                <a href="/" title="leeyorke的个人博客"><span class="header-title-pre">🌻</span>🅲🆄🅲🅺🅾🅾🅼🅰🅽</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -89,7 +87,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">📃文章</a><a class="menu-item" href="/tags/" title="">🏷标签</a><a class="menu-item" href="/categories/" title="">📁分类</a><a class="menu-item" href="/about/" title="">😎关于我</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">📃文章</a><a class="menu-item" href="/tags/" title="">🏷标签</a><a class="menu-item" href="/categories/" title="">📁分类</a><a class="menu-item" href="/about/" title="">😎关于</a><a class="menu-item" href="/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -103,7 +101,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">python | 详解read、readline、readlines区别</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-11">2023-04-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1005 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
@@ -438,20 +436,20 @@ readline 最大读取为一行，最小读取取决于limit。</p>
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2023-04-12</span>
+                <span>更新于 2023-04-13</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/requests/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别" data-via="xxxx"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://leeyorke.github.io/requests/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别" data-hashtags="python"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://leeyorke.github.io/requests/" data-hashtag="python"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://leeyorke.github.io/requests/" data-title="python | 详解read、readline、readlines区别" data-ralateuid="u/3898640391"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">python</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -463,7 +461,7 @@ readline 最大读取为一行，最小读取取决于limit。</p>
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
