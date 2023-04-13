@@ -2,6 +2,7 @@
 title: "字符串变量替换"
 date: 2023-04-11T20:17:11+08:00
 draft: false
+tags: ["python"]
 ---
 # 需求
 在yaml中需要引用自定义变量，我们参照 postman，约定变量符号为 `{{}}`。

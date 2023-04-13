@@ -2,6 +2,7 @@
 title: "python | 详解read、readline、readlines区别"
 date: 2023-04-11T15:10:11+08:00
 draft: false
+tags: ["python"]
 ---
 看了很多博主写的文章，感觉解释的不是很详细，本文结合实际操作详细记录了个人对于read、readline、readlines用法的剖解过程。
 # 函数解释及区别
