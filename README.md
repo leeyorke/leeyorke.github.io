@@ -60,3 +60,5 @@ hugo server
 ```bash
 hugo new posts/docker/docker_command.md
 ```
+# ❗FAQ
+themes文件夹下的东西啊千万不要改，容易导致GitHub action构建失败
