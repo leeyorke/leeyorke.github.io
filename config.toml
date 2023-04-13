@@ -1,8 +1,8 @@
-baseURL = "http://leeyorke.github.io"
+baseURL = "https://leeyorke.github.io"
 # 默认主题
 theme = "LoveIt"
 # 浏览器标签页标题
-title = "⛷leeyorke的个人博客"
+title = "leeyorke的个人博客"
 # 网页默认内容语言
 defaultContentLanguage = "zh-CN"
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
@@ -32,8 +32,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 # 作者配置
 [author]
   name = "leeyorke"
-  email = ""
-  link = ""
+  email = "lee_yorke@outlook.com"
+  link = "http://leeyorke.github.io"
 
 # 菜单配置
 [menu]
@@ -69,11 +69,21 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       identifier = "about"
       pre = "😎"
       post = ""
-      name = "关于我"
+      name = "关于"
       url = "/about/"
+      title = ""
+  [[menu.main]]
+      parent = "关于"
+      weight = 1
+      identifier = "me"
+      pre = "😎"
+      post = ""
+      name = "关于我"
+      url = "/about/me/"
       title = ""
 
 [params]
+  enableGitInfo = true
   # 网站默认主题样式 ["auto", "light", "dark"]
   defaultTheme = "auto"
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
@@ -84,11 +94,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  日期格式
   dateFormat = "2006-01-02"
   # 网站标题, 用于 Open Graph 和 Twitter Cards
-  title = "我的网站"
+  title = "leeyorke"
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-  description = "这是我的全新 Hugo 网站"
+  description = "leeyorke的个人博客"
   # 网站图片, 用于 Open Graph 和 Twitter Cards
-  images = ["/logo.png"]
+  images = ["images/logo.png"]
 
   # 页面头部导航栏配置
   [params.header]
@@ -101,9 +111,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # LOGO 的 URL
       logo = ""
       # 首页左上角标题名称
-      name = "leeyorke的个人博客"
+      name = "🅲🆄🅲🅺🅾🅾🅼🅰🅽"
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = "🚀"
+      pre = "🌻"
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
       post = ""
       #  是否为标题显示打字机动画
@@ -150,9 +160,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
     title = "leeyorke"
     # 是否隐藏网站图标资源链接
-    noFavicon = false
+    noFavicon = true
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
-    svgFavicon = ""
+    svgFavicon = "static/favicon.png"
     # Android 浏览器主题色
     themeColor = "#ffffff"
     # Safari 图标颜色
@@ -214,80 +224,80 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # 作者的社交信息设置
   [params.social]
-    GitHub = "xxxx"
-    Linkedin = ""
-    Twitter = "xxxx"
-    Instagram = "xxxx"
-    Facebook = "xxxx"
-    Telegram = "xxxx"
-    Medium = ""
-    Gitlab = ""
-    Youtubelegacy = ""
-    Youtubecustom = ""
-    Youtubechannel = ""
-    Tumblr = ""
-    Quora = ""
-    Keybase = ""
-    Pinterest = ""
-    Reddit = ""
-    Codepen = ""
-    FreeCodeCamp = ""
-    Bitbucket = ""
-    Stackoverflow = ""
-    Weibo = ""
-    Odnoklassniki = ""
-    VK = ""
-    Flickr = ""
-    Xing = ""
-    Snapchat = ""
-    Soundcloud = ""
-    Spotify = ""
-    Bandcamp = ""
-    Paypal = ""
-    Fivehundredpx = ""
-    Mix = ""
-    Goodreads = ""
-    Lastfm = ""
-    Foursquare = ""
-    Hackernews = ""
-    Kickstarter = ""
-    Patreon = ""
-    Steam = ""
-    Twitch = ""
-    Strava = ""
-    Skype = ""
-    Whatsapp = ""
+    GitHub = "leeyorke"
+#    Linkedin = ""
+#    Twitter = "xxxx"
+#    Instagram = "xxxx"
+#    Facebook = "xxxx"
+#    Telegram = "xxxx"
+#    Medium = ""
+#    Gitlab = ""
+#    Youtubelegacy = ""
+#    Youtubecustom = ""
+#    Youtubechannel = ""
+#    Tumblr = ""
+#    Quora = ""
+#    Keybase = ""
+#    Pinterest = ""
+#    Reddit = ""
+#    Codepen = ""
+#    FreeCodeCamp = ""
+#    Bitbucket = ""
+#    Stackoverflow = ""
+    Weibo = "u/3898640391"
+#    Odnoklassniki = ""
+#    VK = ""
+#    Flickr = ""
+#    Xing = ""
+#    Snapchat = ""
+#    Soundcloud = ""
+#    Spotify = ""
+#    Bandcamp = ""
+#    Paypal = ""
+#    Fivehundredpx = ""
+#    Mix = ""
+#    Goodreads = ""
+#    Lastfm = ""
+#    Foursquare = ""
+#    Hackernews = ""
+#    Kickstarter = ""
+#    Patreon = ""
+#    Steam = ""
+#    Twitch = ""
+#    Strava = ""
+#    Skype = ""
+#    Whatsapp = ""
     Zhihu = ""
-    Douban = ""
-    Angellist = ""
-    Slidershare = ""
-    Jsfiddle = ""
-    Deviantart = ""
-    Behance = ""
-    Dribbble = ""
-    Wordpress = ""
-    Vine = ""
-    Googlescholar = ""
-    Researchgate = ""
-    Mastodon = ""
-    Thingiverse = ""
-    Devto = ""
-    Gitea = ""
-    XMPP = ""
-    Matrix = ""
-    Bilibili = ""
-    Discord = ""
-    DiscordInvite = ""
-    Lichess = ""
-    ORCID = ""
-    Pleroma = ""
-    Kaggle = ""
-    MediaWiki= ""
-    Plume = ""
-    HackTheBox = ""
-    RootMe= ""
-    Phone = ""
-    Email = "xxxx@xxxx.com"
+    Douban = "leeyorke"
+#    Angellist = ""
+#    Slidershare = ""
+#    Jsfiddle = ""
+#    Deviantart = ""
+#    Behance = ""
+#    Dribbble = ""
+#    Wordpress = ""
+#    Vine = ""
+#    Googlescholar = ""
+#    Researchgate = ""
+#    Mastodon = ""
+#    Thingiverse = ""
+#    Devto = ""
+#    Gitea = ""
+#    XMPP = ""
+#    Matrix = ""
+    Bilibili = "275244050"
+#    Discord = ""
+#    DiscordInvite = ""
+#    Lichess = ""
+#    ORCID = ""
+#    Pleroma = ""
+#    Kaggle = ""
+#    MediaWiki= ""
+#    Plume = ""
+#    HackTheBox = ""
+#    RootMe= ""
+    Phone = "12233334444"
+    Email = "lee_yorke@outlook.com"
     RSS = true #
 
   #  文章页面全局配置
@@ -508,7 +518,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  网站 SEO 配置
   [params.seo]
     # 图片 URL
-    image = ""
+    image = "static/favicon.svg"
     # 缩略图 URL
     thumbnailUrl = ""
 
