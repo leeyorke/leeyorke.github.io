@@ -12,6 +12,9 @@ languageName = "简体中文"
 # 是否包括中日韩文字
 hasCJKLanguage = true
 
+# 渲染文件夹, 默认为public
+publishDir = "docs"
+
 # 默认每页列表显示的文章数目
 paginate = 12
 # 谷歌分析代号 [UA-XXXXXXXX-X]
@@ -44,7 +47,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     pre = "📃"
     # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
     post = ""
-    name = "文章"
+    name = "技术"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
     title = ""
@@ -307,7 +310,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     fraction = true
     #  是否使用 fontawesome 扩展语法
     fontawesome = true
-    # 是否在文章页面显示原始 Markdown 文档链接
+    # 是否在文章页面显示原始 Markdown 文档链接,阅读原文
     linkToMarkdown = true
     #  是否在 RSS 中显示全文内容
     rssFullText = false
@@ -630,4 +633,4 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 [languages]
 [languages.zh-cn]
-languageCode = "zh-cn"
+  languageCode = "zh-cn"
