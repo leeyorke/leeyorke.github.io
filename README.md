@@ -54,11 +54,27 @@ hugo server
 * 推送myblog项目到仓库
 * 打开仓库设置，开启pages,Branch设置为master/docs
 * 访问`https://用户名.github.io`。
-# 创建文章
-在content/posts创建文章
-
+# 更新文章流程
+创建文章
+hugo new posts/[文章名]/index.zh-cn.md
 ```bash
-hugo new posts/docker/docker_command.md
+hugo new posts/docker-command/index.zh-cn.md
+```
+渲染
+```bash
+hugo
+```
+本地预览
+```bash
+hugo server
+```
+添加、提交、推送
+```bash
+git add
+
+git commit -m "commit_message"
+
+git push
 ```
 # ❗FAQ
 themes文件夹下的东西啊千万不要改，容易导致GitHub action构建失败
