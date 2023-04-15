@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>python - 分类 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/categories/python/</link>
+        <description>python - 分类 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>python | read 函数</title>
+    <link>https://leeyorke.github.io/python-func-read/</link>
+    <pubDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/python-func-read/</guid>
+    <description><![CDATA[最近在研究 python 文件读取的时候，发现有人这么写代码，说这个 read(n) 函数里面的形参 n 是字节的意思，但其实这个 n 真正的意思是字符个数，所以有些文章可能有些]]></description>
+</item>
+</channel>
+</rss>

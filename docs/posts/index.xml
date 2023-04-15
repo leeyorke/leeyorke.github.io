@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/posts/</link>
         <description>所有文章 | leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>python | read 函数</title>
+    <link>https://leeyorke.github.io/python-func-read/</link>
+    <pubDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/python-func-read/</guid>
+    <description><![CDATA[最近在研究 python 文件读取的时候，发现有人这么写代码，说这个 read(n) 函数里面的形参 n 是字节的意思，但其实这个 n 真正的意思是字符个数，所以有些文章可能有些]]></description>
+</item>
+<item>
     <title>postman脚本使用正则提取变量</title>
     <link>https://leeyorke.github.io/postman/</link>
     <pubDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</pubDate>
