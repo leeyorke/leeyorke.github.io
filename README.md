@@ -62,11 +62,11 @@ hugo new posts/docker-command/index.zh-cn.md
 ```
 渲染
 ```bash
-hugo
+hugo -e production
 ```
 本地预览
 ```bash
-hugo server
+hugo server -e production
 ```
 添加、提交、推送
 ```bash
