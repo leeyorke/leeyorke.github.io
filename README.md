@@ -76,5 +76,18 @@ git commit -m "commit_message"
 
 git push
 ```
-# ❗FAQ
-themes文件夹下的东西啊千万不要改，容易导致GitHub action构建失败
+# ❗ FAQ
+* themes 文件夹下的东西千万不要改，容易导致 GitHub action 构建失败
+* 如何给博客配置评论系统？
+  * 注册 Utterances 👉 [点击查看](https://roife.github.io/2021/02/12/use-utterances-for-comment/))
+  * 修改 config.toml
+  ```toml
+  [params.page.comment.utterances]
+        enable = true
+        # owner/repo
+        repo = "xxx/xxx.github.io"
+        issueTerm = "pathname"
+        label = "comment"
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
+  * ```
