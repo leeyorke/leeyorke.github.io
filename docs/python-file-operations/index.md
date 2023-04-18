@@ -106,10 +106,10 @@ python 中给出了多个文件读取模式符，但每个意思都有一些区�
 那么如何插入文本到文件头部？
 
 ```python
-with open('test.txt', 'r+') as fp:
+with open(r'test.txt', 'r+', encoding='utf-8') as fp:
     insert_content = "insert_words"
     content = fp.read()        
     fp.seek(0, 0)  # 将文件指针移动到文件头部
-    fp.write('insert_content\n'+content)
+    fp.write(f'{insert_content}\n'+content)
 ```
 
