@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 18 Apr 2023 15:42:13 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>python | 文件的 IO 操作你真的精通吗</title>
+    <link>https://leeyorke.github.io/python-file-operations/</link>
+    <pubDate>Tue, 18 Apr 2023 15:42:13 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/python-file-operations/</guid>
+    <description><![CDATA[背景 在更新文件的时候，考虑到在文件头部加上 version 及 change 之类的东西，以此来区分文件的异同并且能保存旧文件。但在实际操作中遇到了以下问题。 utf-8 下一个汉字]]></description>
+</item>
+<item>
     <title>python | read 函数</title>
     <link>https://leeyorke.github.io/python-func-read/</link>
     <pubDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</pubDate>
