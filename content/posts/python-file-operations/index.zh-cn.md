@@ -25,8 +25,8 @@ with open(r'.\test.txt', 'r', encoding='utf-8') as fp:
 
 ```python
 @abstractmethod
-    def seek(self, offset: int, whence: int = 0) -> int:
-        pass
+def seek(self, offset: int, whence: int = 0) -> int:
+    pass
 ```
 * `offset`：从 `whence` 开始，需要多少偏移量（必填参数），也就是代表需要移动偏移的字节数，如果是负数表示从倒数第几位开始；
 * `whence`：从哪个位置开始偏移（可选参数），默认值为 0。给 offset 定义一个参数，表示要从哪个位置开始偏移；0 代表从文件开头开始算起，1 代表从当前位置开始算起，2 代表从文件末尾算起。
@@ -34,8 +34,8 @@ with open(r'.\test.txt', 'r', encoding='utf-8') as fp:
 
 ```python
 @abstractmethod
-    def tell(self) -> int:
-        pass
+def tell(self) -> int:
+    pass
 ```
 
 ## 文件读取模式
