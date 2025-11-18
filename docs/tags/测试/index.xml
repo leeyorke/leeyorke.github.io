@@ -1,10 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>测试 - 标签 - leeyorke的个人博客</title>
+        <title>“测试” - 标签 - leeyorke的个人博客</title>
         <link>https://leeyorke.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
-        <description>测试 - 标签 - leeyorke的个人博客</description>
+        <description>“测试” - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/%E6%B5%8B%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 18 Nov 2025 16:22:25 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/%E6%B5%8B%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
+    <title>如何进行需求分析</title>
+    <link>https://leeyorke.github.io/2025-11-18/</link>
+    <pubDate>Tue, 18 Nov 2025 16:22:25 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-18/</guid>
+    <description><![CDATA[用xmind机型需求分析的步骤 产品名称 模块 功能 子功能 正常场景 验证&hellip;情况下&hellip;应该&hellip; 异常场景 情形一 情形]]></description>
+</item>
+<item>
     <title>postman脚本使用正则提取变量</title>
     <link>https://leeyorke.github.io/postman/</link>
     <pubDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</pubDate>
