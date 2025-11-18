@@ -44,7 +44,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     weight = 1
     identifier = "posts"
     # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-    pre = "✍"
+    pre = ""
     # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
     post = ""
     name = "文章"
@@ -54,7 +54,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [[menu.main]]
     weight = 2
     identifier = "tags"
-    pre = "🏷"
+    pre = ""
     post = ""
     name = "标签"
     url = "/tags/"
@@ -62,7 +62,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [[menu.main]]
     weight = 3
     identifier = "categories"
-    pre = "📁"
+    pre = ""
     post = ""
     name = "分类"
     url = "/categories/"
@@ -70,7 +70,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [[menu.main]]
       weight = 4
       identifier = "about"
-      pre = "😁"
+      pre = ""
       post = ""
       name = "关于"
       url = "/about/"
@@ -105,7 +105,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # LOGO 的 URL
       logo = ""
       # 首页左上角标题名称
-      name = "🅲🆄🅲🅺🅾🅾🅼🅰🅽"
+      name = "LEEYORKE"
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = ""
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
@@ -200,7 +200,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       #  主页显示的网站标题 (支持 HTML 格式)，头像下面的标题
       title = ""
       # 主页显示的网站副标题 (允许 HTML 格式)
-      subtitle = "争你们个人的自由，便是为国家争自由"
+      subtitle = "一个人要把他的原则放到大事上面，小事的话，仁慈即可"
       # 是否为副标题显示打字机动画
       typeit = true
       # 是否显示社交账号
@@ -238,7 +238,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 #    FreeCodeCamp = ""
 #    Bitbucket = ""
 #    Stackoverflow = ""
-    Weibo = "u/3898640391"
+    Weibo = "u/"
 #    Odnoklassniki = ""
 #    VK = ""
 #    Flickr = ""
