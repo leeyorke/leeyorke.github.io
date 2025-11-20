@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>hugo - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/hugo/</link>
+        <description>hugo - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>hugo 如何显示 mermaid 流程图</title>
+    <link>https://leeyorke.github.io/2025-11-20/</link>
+    <pubDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-20/</guid>
+    <description><![CDATA[hugo 默认是不显示 mermaid 流程图的, 如果写了 mermaid 代码, 不会自动渲染，这就需要自行配置下。 windows 下配置流程 第一步。在博客根目录的 layouts 目录下创建 _default 目录，拷贝主题下]]></description>
+</item>
+</channel>
+</rss>

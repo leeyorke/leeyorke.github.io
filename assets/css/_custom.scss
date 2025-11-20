@@ -2,3 +2,11 @@
 // Custom style
 // 自定义样式
 // ==============================
+
+/* 流程图居中显示 */
+.flowchart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}

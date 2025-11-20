@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>测试用例 - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</link>
+        <description>测试用例 - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 19 Nov 2025 11:59:17 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>sunflower演进之路|用例model设计</title>
+    <link>https://leeyorke.github.io/2025-11-19/</link>
+    <pubDate>Wed, 19 Nov 2025 11:59:17 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-19/</guid>
+    <description><![CDATA[本文档介绍 sunflower 测试框架的用例组成。 基类 sunflower 测试用例文档由以下三个基类构成。 1 2 3 config: background: testcases: config 基类 config 会引用 api 文档中的配置。 api 也是用yaml编写，需要在]]></description>
+</item>
+</channel>
+</rss>

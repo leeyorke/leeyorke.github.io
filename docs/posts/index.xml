@@ -4,7 +4,23 @@
         <link>https://leeyorke.github.io/posts/</link>
         <description>所有文章 | leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 18 Nov 2025 17:01:01 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>hugo 如何显示 mermaid 流程图</title>
+    <link>https://leeyorke.github.io/2025-11-20/</link>
+    <pubDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-20/</guid>
+    <description><![CDATA[hugo 默认是不显示 mermaid 流程图的, 如果写了 mermaid 代码, 不会自动渲染，这就需要自行配置下。 windows 下配置流程 第一步。在博客根目录的 layouts 目录下创建 _default 目录，拷贝主题下]]></description>
+</item>
+<item>
+    <title>sunflower演进之路|用例model设计</title>
+    <link>https://leeyorke.github.io/2025-11-19/</link>
+    <pubDate>Wed, 19 Nov 2025 11:59:17 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-19/</guid>
+    <description><![CDATA[本文档介绍 sunflower 测试框架的用例组成。 基类 sunflower 测试用例文档由以下三个基类构成。 1 2 3 config: background: testcases: config 基类 config 会引用 api 文档中的配置。 api 也是用yaml编写，需要在]]></description>
+</item>
+<item>
     <title>庚子赔款退还的真相</title>
     <link>https://leeyorke.github.io/boxerindemnity/</link>
     <pubDate>Tue, 18 Nov 2025 17:01:01 &#43;0800</pubDate>
@@ -18,7 +34,7 @@
     <pubDate>Tue, 18 Nov 2025 16:22:25 &#43;0800</pubDate>
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-18/</guid>
-    <description><![CDATA[用xmind机型需求分析的步骤 产品名称 模块 功能 子功能 正常场景 验证&hellip;情况下&hellip;应该&hellip; 异常场景 情形一 情形]]></description>
+    <description><![CDATA[01 用xmind进行需求分析的步骤 产品名称 模块 功能 子功能 正常场景 验证&hellip;情况下&hellip;应该&hellip; 异常场景 情形一 情]]></description>
 </item>
 <item>
     <title>记国庆节</title>
@@ -67,14 +83,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/strings-replace/</guid>
     <description><![CDATA[需求 在yaml中需要引用自定义变量，我们参照 postman，约定变量符号为 {{}}。 思路 我们知道在 python 中字符串格式化可以通过 .format() 方法来处理。 比如]]></description>
-</item>
-<item>
-    <title>python | 详解read、readline、readlines区别</title>
-    <link>https://leeyorke.github.io/requests/</link>
-    <pubDate>Tue, 11 Apr 2023 15:10:11 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/requests/</guid>
-    <description><![CDATA[看了很多博主写的文章，感觉解释的不是很详细，本文结合实际操作详细记录了个人对于read、readline、readlines用法的剖解过程。]]></description>
 </item>
 </channel>
 </rss>
