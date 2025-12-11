@@ -10,7 +10,7 @@
     <pubDate>Wed, 19 Nov 2025 11:59:17 &#43;0800</pubDate>
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-19/</guid>
-    <description><![CDATA[本文档介绍 sunflower 测试框架的用例组成。 基类 sunflower 测试用例文档由以下三个基类构成。 1 2 3 config: background: testcases: config 基类 config 会引用 api 文档中的配置。 api 也是用yaml编写，需要在]]></description>
+    <description><![CDATA[本文档介绍 sunflower 测试框架的用例结构组成。 基本组件 sunflower 测试用例文档由以下三个基本组件构成。 1 2 3 config: background: testcases: config config 通过 !include 标签用来引用 api 文档路径。 api 也是用ya]]></description>
 </item>
 </channel>
 </rss>

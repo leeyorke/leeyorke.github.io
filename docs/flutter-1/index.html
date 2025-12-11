@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Flutter开发之路-环境搭建 - leeyorke的个人博客</title><meta name="Description" content="leeyorke的个人博客"><meta property="og:title" content="Flutter开发之路-环境搭建" />
+<meta property="og:description" content="前言 用了很久的 microsoft todo 是个很好的待办清单工具，但是有以下缺点： 同步速度较慢。 没有艾森豪威尔矩阵。 不能与 obsidian 打通, （其实也有开源的插件，但比较难用）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leeyorke.github.io/flutter-1/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-12-11T20:31:31+08:00" />
+<meta property="article:modified_time" content="2025-12-11T20:31:31+08:00" /><meta property="og:site_name" content="leeyorke" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="Flutter开发之路-环境搭建"/>
+<meta name="twitter:description" content="前言 用了很久的 microsoft todo 是个很好的待办清单工具，但是有以下缺点： 同步速度较慢。 没有艾森豪威尔矩阵。 不能与 obsidian 打通, （其实也有开源的插件，但比较难用）"/>
+<meta name="application-name" content="leeyorke">
+<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/flutter-1/" /><link rel="prev" href="https://leeyorke.github.io/ai-song/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Flutter开发之路-环境搭建",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/leeyorke.github.io\/flutter-1\/"
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "flutter","wordcount":  1435 ,
+        "url": "https:\/\/leeyorke.github.io\/flutter-1\/","datePublished": "2025-12-11T20:31:31+08:00","dateModified": "2025-12-11T20:31:31+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "leeyorke"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="leeyorke的个人博客">LEEYORKE</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="leeyorke的个人博客">LEEYORKE</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Flutter开发之路-环境搭建</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-12-11">2025-12-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1435 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+<p>用了很久的 <code>microsoft todo</code> 是个很好的待办清单工具，但是有以下缺点：</p>
+<ul>
+<li>同步速度较慢。</li>
+<li>没有艾森豪威尔矩阵。</li>
+<li>不能与 <code>obsidian</code> 打通, （其实也有开源的插件，但比较难用）。</li>
+</ul>
+<p>故产生了自己开发一个自用 <code>TODO</code> 应用的的想法。初步设想有以下功能：</p>
+<ul>
+<li>
+<p>首要就是添加待办任务了。但是这个待办任务可以分类，可以有：临时待办、习惯、愿望清单、我的一天。</p>
+<ul>
+<li>我的一天。显示日程，主要是显示1天内可以完成的任务。就是说你要在某一天要做的事，如果到了那一天，都会再此分类下显示。</li>
+<li>习惯。没有期限、重复性比较强的任务。可设置执行时间，在时间点会提醒你。</li>
+<li>愿望清单。没有期限。只是做一个记录。</li>
+</ul>
+</li>
+<li>
+<p>艾森豪威尔矩阵。设置优先级及重要性后显示，只显示本周内需要执行的任务。</p>
+</li>
+<li>
+<p>番茄钟。用于设置专注模式。可将某些专注任务加进来。</p>
+</li>
+<li>
+<p>统计模式。将任务的执行数据统计生成报告。</p>
+</li>
+</ul>
+<h1 id="安装环境">安装环境</h1>
+<p>本人是 <code>windows</code> 系统，在 <code>vscode</code> 上开发，故记录在 <code>win</code> 环境下安装 <code>flutter</code> 的过程。
+<code>flutter</code> 开发所需要的资源如下：</p>
+<ul>
+<li>Flutter SDK</li>
+<li>Android Studio</li>
+<li>VSCode</li>
+<li>Dart SDK</li>
+<li>Git</li>
+<li>科学上网</li>
+</ul>
+<p>安装步骤：</p>
+<p><strong>第一步</strong>。安装 Git、VSCode。</p>
+<p><strong>第二步</strong>。安装 Flutter SDK。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/flutter/flutter.git -b stable -c http.proxy<span class="o">=</span>http://127.0.0.1:7890
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载完毕后，找到下载目录并配置用户环境变量。如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\src\flutter\bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>键入以下命令。如看到版本号即表示配置成功。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">flutter --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>检查 <code>flutter</code> 运行时环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">flutter doctor
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会打印一些报错，重点关注 <code>[✗] Android toolchain</code>。根据提示安装对应工具。</p>
+<p><strong>第三步</strong>。安装 Android Studio。<code>https://developer.android.com/studio</code>
+安装完毕后，先配置 Android Studio 的 Http 代理。</p>
+<p>再配置 <code>Android Sdk</code> 用户环境变量。名称为：<code>ANDROID_HOME</code>，目录为：<code>C:\Users\{用户名}\AppData\Local\Android\Sdk</code>。</p>
+<p>再在系统环境变量添加如下：</p>
+<ul>
+<li><code>%ANDROID_HOME%\cmdline-tools\latest\bin</code></li>
+<li><code>%ANDROID_HOME%\platform-tools</code></li>
+</ul>
+<p>接受 Android 许可证。<code>flutter doctor --android-licenses</code>，全部接受。</p>
+<p>再检测。还有问题根据提示直接做相应操作即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">&gt;</span> <span class="n">flutter</span> <span class="n">doctor</span>
+</span></span><span class="line"><span class="cl"><span class="n">Doctor</span> <span class="n">summary</span> <span class="p">(</span><span class="n">to</span> <span class="n">see</span> <span class="n">all</span> <span class="n">details</span><span class="p">,</span> <span class="n">run</span> <span class="n">flutter</span> <span class="n">doctor</span> <span class="n">-v</span><span class="p">)</span><span class="err">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">✓</span><span class="p">]</span> <span class="n">Flutter</span> <span class="p">(</span><span class="n">Channel</span> <span class="n">stable</span><span class="p">,</span> <span class="n">3</span><span class="p">.</span><span class="n">38</span><span class="p">.</span><span class="n">4</span><span class="p">,</span> <span class="n">on</span> <span class="n">Microsoft</span> <span class="n">Windows</span> <span class="p">[</span><span class="n">版本</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">19044</span><span class="p">.</span><span class="n">2728</span><span class="p">],</span> <span class="n">locale</span> <span class="nb">zh-CN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">✓</span><span class="p">]</span> <span class="n">Windows</span> <span class="n">Version</span> <span class="p">(</span><span class="n">10</span> <span class="n">家庭中文版</span> <span class="n">64</span> <span class="n">位</span><span class="p">,</span> <span class="n">21H2</span><span class="p">,</span> <span class="n">2009</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">✓</span><span class="p">]</span> <span class="n">Android</span> <span class="n">toolchain</span> <span class="p">-</span> <span class="n">develop</span> <span class="k">for</span> <span class="n">Android</span> <span class="n">devices</span> <span class="p">(</span><span class="n">Android</span> <span class="n">SDK</span> <span class="n">version</span> <span class="n">28</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">✗</span><span class="p">]</span> <span class="n">Chrome</span> <span class="p">-</span> <span class="n">develop</span> <span class="k">for</span> <span class="n">the</span> <span class="n">web</span> <span class="p">(</span><span class="n">Cannot</span> <span class="n">find</span> <span class="n">Chrome</span> <span class="n">executable</span> <span class="n">at</span> <span class="p">.\</span><span class="n">Google</span><span class="p">\</span><span class="n">Chrome</span><span class="p">\</span><span class="n">Application</span><span class="p">\</span><span class="n">chrome</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">!</span> <span class="n">Cannot</span> <span class="n">find</span> <span class="n">Chrome</span><span class="p">.</span> <span class="k">Try</span> <span class="n">setting</span> <span class="n">CHROME_EXECUTABLE</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Chrome</span> <span class="n">executable</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">✗</span><span class="p">]</span> <span class="n">Visual</span> <span class="n">Studio</span> <span class="p">-</span> <span class="n">develop</span> <span class="n">Windows</span> <span class="n">apps</span>
+</span></span><span class="line"><span class="cl">    <span class="err">✗</span> <span class="n">Visual</span> <span class="n">Studio</span> <span class="n">not</span> <span class="n">installed</span><span class="p">;</span> <span class="n">this</span> <span class="n">is</span> <span class="n">necessary</span> <span class="n">to</span> <span class="n">develop</span> <span class="n">Windows</span> <span class="n">apps</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Download</span> <span class="n">at</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">visualstudio</span><span class="p">.</span><span class="n">microsoft</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">downloads</span><span class="p">/.</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Please</span> <span class="n">install</span> <span class="n">the</span> <span class="s2">&#34;Desktop development with C++&#34;</span> <span class="n">workload</span><span class="p">,</span> <span class="n">including</span> <span class="n">all</span> <span class="n">of</span> <span class="n">its</span> <span class="k">default</span> <span class="n">components</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">✓</span><span class="p">]</span> <span class="n">Connected</span> <span class="n">device</span> <span class="p">(</span><span class="n">2</span> <span class="n">available</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第四步</strong>。打开VS Code，安装 Flutter 和 Dart 插件（作者：Dart Code）。</p>
+<h1 id="运行-demo">运行 <code>demo</code></h1>
+<p>先简单认识两个命令：</p>
+<ul>
+<li><code>flutter create my_app</code>。自动生成一个 flutter 项目。</li>
+<li><code>flutter run</code>。运行当前工程。</li>
+</ul>
+<p>那么，先创建一个 flutter app, 会自己生成一个简单的app。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">flutter create my_app
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着 vscode 打开该工程。<strong>重点来了</strong>。
+由于 flutter run 运行时会下载很多包，非常耗时间，所以必须先配置国内源。
+需要更改的文件有以下：</p>
+<ol>
+<li>gradle-wrapper.properties</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="c1"># android\gradle\wrapper\gradle-wrapper.properties</span>
+</span></span><span class="line"><span class="cl"><span class="na">distributionBase</span><span class="o">=</span><span class="s">GRADLE_USER_HOME</span>
+</span></span><span class="line"><span class="cl"><span class="na">distributionPath</span><span class="o">=</span><span class="s">wrapper/dists</span>
+</span></span><span class="line"><span class="cl"><span class="na">zipStoreBase</span><span class="o">=</span><span class="s">GRADLE_USER_HOME</span>
+</span></span><span class="line"><span class="cl"><span class="na">zipStorePath</span><span class="o">=</span><span class="s">wrapper/dists</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># distributionUrl=https\://services.gradle.org/distributions/gradle-8.14-all.zip</span>
+</span></span><span class="line"><span class="cl"><span class="na">distributionUrl</span><span class="o">=</span><span class="s">https://mirrors.cloud.tencent.com/gradle/gradle-8.14-all.zip</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>build.gradle.kts</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="c1">// android\build.gradle.kts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">allprojects</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">repositories</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// google()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// mavenCentral()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/repository/google&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/repository/public&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/nexus/content/groups/public&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/nexus/content/repositories/jcenter&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/repository/gradle-plugin&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">newBuildDir</span><span class="p">:</span> <span class="n">Directory</span> <span class="p">=</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rootProject</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">buildDirectory</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s2">&#34;../../build&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="k">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">rootProject</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">buildDirectory</span><span class="p">.</span><span class="k">value</span><span class="p">(</span><span class="n">newBuildDir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">subprojects</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">newSubprojectBuildDir</span><span class="p">:</span> <span class="n">Directory</span> <span class="p">=</span> <span class="n">newBuildDir</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="n">project</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">project</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">buildDirectory</span><span class="p">.</span><span class="k">value</span><span class="p">(</span><span class="n">newSubprojectBuildDir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">subprojects</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">project</span><span class="p">.</span><span class="n">evaluationDependsOn</span><span class="p">(</span><span class="s2">&#34;:app&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">tasks</span><span class="p">.</span><span class="n">register</span><span class="p">&lt;</span><span class="n">Delete</span><span class="p">&gt;(</span><span class="s2">&#34;clean&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">delete</span><span class="p">(</span><span class="n">rootProject</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">buildDirectory</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>settings.gradle.kts</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="c1">// android\settings.gradle.kts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">pluginManagement</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">flutterSdkPath</span> <span class="p">=</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">properties</span> <span class="p">=</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Properties</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">file</span><span class="p">(</span><span class="s2">&#34;local.properties&#34;</span><span class="p">).</span><span class="n">inputStream</span><span class="p">().</span><span class="n">use</span> <span class="p">{</span> <span class="n">properties</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="k">it</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">val</span> <span class="py">flutterSdkPath</span> <span class="p">=</span> <span class="n">properties</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s2">&#34;flutter.sdk&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">require</span><span class="p">(</span><span class="n">flutterSdkPath</span> <span class="o">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&#34;flutter.sdk not set in local.properties&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flutterSdkPath</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">includeBuild</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">$flutterSdkPath</span><span class="s2">/packages/flutter_tools/gradle&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">repositories</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// google()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// mavenCentral()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// gradlePluginPortal()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/repository/google&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/repository/public&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/nexus/content/groups/public&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/nexus/content/repositories/jcenter&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s2">&#34;https://maven.aliyun.com/repository/gradle-plugin&#34;</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plugins</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">id</span><span class="p">(</span><span class="s2">&#34;dev.flutter.flutter-plugin-loader&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;1.0.0&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">id</span><span class="p">(</span><span class="s2">&#34;com.android.application&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;8.11.1&#34;</span> <span class="n">apply</span> <span class="k">false</span>
+</span></span><span class="line"><span class="cl">    <span class="n">id</span><span class="p">(</span><span class="s2">&#34;org.jetbrains.kotlin.android&#34;</span><span class="p">)</span> <span class="n">version</span> <span class="s2">&#34;2.2.20&#34;</span> <span class="n">apply</span> <span class="k">false</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="s2">&#34;:app&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着要创建一个文件夹 <code>.gradle</code> 在D盘，如 <code>&quot;D:\myworkspace\flutter_config\.gradle&quot;</code>，然后设置一个系统环境变量 <code>GRADLE_USER_HOME</code>，值为刚才的路径。再启动 Android Studio 的虚拟机。
+最后，运行 <code>flutter run</code>。等一会就能看到在模拟器里看见app了。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-12-11</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/flutter-1/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://leeyorke.github.io/flutter-1/" data-title="Flutter开发之路-环境搭建" data-hashtags="flutter"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://leeyorke.github.io/flutter-1/" data-hashtag="flutter"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://leeyorke.github.io/flutter-1/" data-title="Flutter开发之路-环境搭建"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://leeyorke.github.io/flutter-1/" data-title="Flutter开发之路-环境搭建"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://leeyorke.github.io/flutter-1/" data-title="Flutter开发之路-环境搭建" data-ralateuid="u/"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/flutter/">flutter</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ai-song/" class="prev" rel="prev" title="如何使用ai翻唱一首歌"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>如何使用ai翻唱一首歌</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"leeyorke/leeyorke.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://plausible.io/js/plausible.js" async defer data-domain="leeyorke.github.io"></script>
+
+    </body>
+</html>

@@ -4,9 +4,41 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 11 Dec 2025 20:31:31 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Flutter开发之路-环境搭建</title>
+    <link>https://leeyorke.github.io/flutter-1/</link>
+    <pubDate>Thu, 11 Dec 2025 20:31:31 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/flutter-1/</guid>
+    <description><![CDATA[前言 用了很久的 microsoft todo 是个很好的待办清单工具，但是有以下缺点： 同步速度较慢。 没有艾森豪威尔矩阵。 不能与 obsidian 打通, （其实也有开源的插件，但比较难用）]]></description>
+</item>
+<item>
+    <title>如何使用ai翻唱一首歌</title>
+    <link>https://leeyorke.github.io/ai-song/</link>
+    <pubDate>Fri, 05 Dec 2025 20:54:08 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/ai-song/</guid>
+    <description><![CDATA[下载软件：https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-W]]></description>
+</item>
+<item>
+    <title>一日一技|python中dataclass的使用</title>
+    <link>https://leeyorke.github.io/2025-11-23/</link>
+    <pubDate>Sun, 23 Nov 2025 20:45:42 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-23/</guid>
+    <description><![CDATA[默认值的定义 1 2 3 4 5 6 @dataclass class Script: description: str call: str kwargs: Dict[str, Any] = field(default_factory=dict) export: Optional[Export] = None description: str 这种定义意味着: 告诉用户该类在初始化时description参数类型应该为str]]></description>
+</item>
+<item>
+    <title>一日一技|yaml中的多行字符串</title>
+    <link>https://leeyorke.github.io/2025-11-22/</link>
+    <pubDate>Sat, 22 Nov 2025 08:12:37 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-22/</guid>
+    <description><![CDATA[yaml 中多行字符串的各种写法。 原始yaml 1 2 3 4 5 paragraph: Blank lines denote paragraph breaks alias: bar: baz 转成json 1 2 3 4 5 6 { &#34;paragraph&#34;: &#34;Blank lines denote paragraph breaks&#34;, &#34;alias&#34;: { &#34;bar&#34;: &#34;baz&#34; } } | 作用：| 会给每一行末尾]]></description>
+</item>
+<item>
     <title>hugo 如何显示 mermaid 流程图</title>
     <link>https://leeyorke.github.io/2025-11-20/</link>
     <pubDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</pubDate>
@@ -20,7 +52,7 @@
     <pubDate>Wed, 19 Nov 2025 11:59:17 &#43;0800</pubDate>
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-19/</guid>
-    <description><![CDATA[本文档介绍 sunflower 测试框架的用例组成。 基类 sunflower 测试用例文档由以下三个基类构成。 1 2 3 config: background: testcases: config 基类 config 会引用 api 文档中的配置。 api 也是用yaml编写，需要在]]></description>
+    <description><![CDATA[本文档介绍 sunflower 测试框架的用例结构组成。 基本组件 sunflower 测试用例文档由以下三个基本组件构成。 1 2 3 config: background: testcases: config config 通过 !include 标签用来引用 api 文档路径。 api 也是用ya]]></description>
 </item>
 <item>
     <title>庚子赔款退还的真相</title>
@@ -53,38 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/python-method/</guid>
     <description><![CDATA[示例 以下是一个简单的python 类方法、实例方法、静态方法的定义 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 class D: age]]></description>
-</item>
-<item>
-    <title>python | 文件的 IO 操作你真的精通吗</title>
-    <link>https://leeyorke.github.io/python-file-operations/</link>
-    <pubDate>Tue, 18 Apr 2023 15:42:13 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/python-file-operations/</guid>
-    <description><![CDATA[背景 在更新文件的时候，考虑到在文件头部加上 version 及 change 之类的东西，以此来区分文件的异同并且能保存旧文件。但在实际操作中遇到了以下问题。 utf-8 下一个汉字]]></description>
-</item>
-<item>
-    <title>python | read 函数</title>
-    <link>https://leeyorke.github.io/python-func-read/</link>
-    <pubDate>Fri, 14 Apr 2023 23:23:11 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/python-func-read/</guid>
-    <description><![CDATA[最近在研究 python 文件读取的时候，发现有人这么写代码，说这个 read(n) 函数里面的形参 n 是字节的意思，但其实这个 n 真正的意思是字符个数，所以有些文章可能有些]]></description>
-</item>
-<item>
-    <title>postman脚本使用正则提取变量</title>
-    <link>https://leeyorke.github.io/postman/</link>
-    <pubDate>Wed, 12 Apr 2023 20:23:11 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/postman/</guid>
-    <description><![CDATA[遇到的坑 假设接口resp响应如下，我们要提取里面的sessionId ，因为resp里面包含\字符。所以需要在\前面加\形成\\才能正确提取 1]]></description>
-</item>
-<item>
-    <title>字符串变量替换</title>
-    <link>https://leeyorke.github.io/strings-replace/</link>
-    <pubDate>Tue, 11 Apr 2023 20:17:11 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/strings-replace/</guid>
-    <description><![CDATA[需求 在yaml中需要引用自定义变量，我们参照 postman，约定变量符号为 {{}}。 思路 我们知道在 python 中字符串格式化可以通过 .format() 方法来处理。 比如]]></description>
 </item>
 </channel>
 </rss>

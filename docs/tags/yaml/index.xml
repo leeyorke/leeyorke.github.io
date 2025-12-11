@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>yaml - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/yaml/</link>
+        <description>yaml - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sat, 22 Nov 2025 08:12:37 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/yaml/" rel="self" type="application/rss+xml" /><item>
+    <title>一日一技|yaml中的多行字符串</title>
+    <link>https://leeyorke.github.io/2025-11-22/</link>
+    <pubDate>Sat, 22 Nov 2025 08:12:37 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-11-22/</guid>
+    <description><![CDATA[yaml 中多行字符串的各种写法。 原始yaml 1 2 3 4 5 paragraph: Blank lines denote paragraph breaks alias: bar: baz 转成json 1 2 3 4 5 6 { &#34;paragraph&#34;: &#34;Blank lines denote paragraph breaks&#34;, &#34;alias&#34;: { &#34;bar&#34;: &#34;baz&#34; } } | 作用：| 会给每一行末尾]]></description>
+</item>
+</channel>
+</rss>

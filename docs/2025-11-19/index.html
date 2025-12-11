@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>sunflower演进之路|用例model设计 - leeyorke的个人博客</title><meta name="Description" content="leeyorke的个人博客"><meta property="og:title" content="sunflower演进之路|用例model设计" />
-<meta property="og:description" content="本文档介绍 sunflower 测试框架的用例组成。 基类 sunflower 测试用例文档由以下三个基类构成。 1 2 3 config: background: testcases: config 基类 config 会引用 api 文档中的配置。 api 也是用yaml编写，需要在" />
+<meta property="og:description" content="本文档介绍 sunflower 测试框架的用例结构组成。 基本组件 sunflower 测试用例文档由以下三个基本组件构成。 1 2 3 config: background: testcases: config config 通过 !include 标签用来引用 api 文档路径。 api 也是用ya" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leeyorke.github.io/2025-11-19/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2025-11-19T11:59:17+08:00" />
-<meta property="article:modified_time" content="2025-11-19T11:59:17+08:00" /><meta property="og:site_name" content="leeyorke" />
+<meta property="article:modified_time" content="2025-11-20T21:50:47+08:00" /><meta property="og:site_name" content="leeyorke" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
 
 <meta name="twitter:title" content="sunflower演进之路|用例model设计"/>
-<meta name="twitter:description" content="本文档介绍 sunflower 测试框架的用例组成。 基类 sunflower 测试用例文档由以下三个基类构成。 1 2 3 config: background: testcases: config 基类 config 会引用 api 文档中的配置。 api 也是用yaml编写，需要在"/>
+<meta name="twitter:description" content="本文档介绍 sunflower 测试框架的用例结构组成。 基本组件 sunflower 测试用例文档由以下三个基本组件构成。 1 2 3 config: background: testcases: config config 通过 !include 标签用来引用 api 文档路径。 api 也是用ya"/>
 <meta name="application-name" content="leeyorke">
 <meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/2025-11-19/" /><link rel="prev" href="https://leeyorke.github.io/boxerindemnity/" /><link rel="next" href="https://leeyorke.github.io/2025-11-20/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leeyorke.github.io\/2025-11-19\/"
-        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "测试, 测试用例, python","wordcount":  499 ,
-        "url": "https:\/\/leeyorke.github.io\/2025-11-19\/","datePublished": "2025-11-19T11:59:17+08:00","dateModified": "2025-11-19T11:59:17+08:00","publisher": {
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "测试, 测试用例, python","wordcount":  1938 ,
+        "url": "https:\/\/leeyorke.github.io\/2025-11-19\/","datePublished": "2025-11-19T11:59:17+08:00","dateModified": "2025-11-20T21:50:47+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -102,8 +102,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">sunflower演进之路|用例model设计</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-11-19">2025-11-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 499 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-11-19">2025-11-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1938 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -111,23 +111,30 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#基类">基类</a>
+    <li><a href="#基本组件">基本组件</a>
       <ul>
-        <li><a href="#config-基类"><code>config</code> 基类</a></li>
-        <li><a href="#background-基类"><code>background</code> 基类</a></li>
-        <li><a href="#testcases-基类"><code>testcases</code> 基类</a></li>
+        <li><a href="#config"><code>config</code></a></li>
+        <li><a href="#background"><code>background</code></a></li>
+        <li><a href="#testcases"><code>testcases</code></a></li>
       </ul>
     </li>
-    <li><a href="#组件">组件</a>
+    <li><a href="#子组件">子组件</a>
       <ul>
-        <li><a href="#environment_variable">environment_variable</a></li>
+        <li><a href="#vars">vars</a></li>
+        <li><a href="#export">export</a></li>
+      </ul>
+    </li>
+    <li><a href="#断言">断言</a>
+      <ul>
+        <li><a href="#断言组件">断言组件</a></li>
+        <li><a href="#断言条件">断言条件</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>本文档介绍 <code>sunflower</code> 测试框架的用例组成。</p>
-<h2 id="基类">基类</h2>
-<p><code>sunflower</code> 测试用例文档由以下三个基类构成。</p>
+            </div><div class="content" id="content"><p>本文档介绍 <code>sunflower</code> 测试框架的用例结构组成。</p>
+<h2 id="基本组件">基本组件</h2>
+<p><code>sunflower</code> 测试用例文档由以下三个基本组件构成。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -140,20 +147,206 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">testcases</span><span class="p">:</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="config-基类"><code>config</code> 基类</h3>
-<p><code>config</code> 会引用 <code>api</code> 文档中的配置。 <code>api</code> 也是用yaml编写，需要在测试前定义好。作用是定义好接口测试
-的文档。</p>
-<h3 id="background-基类"><code>background</code> 基类</h3>
-<p><code>background</code> 作用是定义整个文档的测试背景，下面可以设置各种组件，目前可以设置：</p>
+</div><h3 id="config"><code>config</code></h3>
+<p><code>config</code> 通过 <code>!include</code> 标签用来引用 <code>api</code> 文档路径。 <code>api</code> 也是用yaml编写，需要在测试前定义好，
+作用是定义好接口测试的各种配置。</p>
+<h3 id="background"><code>background</code></h3>
+<p><code>background</code> 下为 <code>list</code> 形式, 作用是定义整个文档的测试背景，在它下面可以设置各种组件，目前可以设置：</p>
 <ul>
-<li>environment_variable</li>
-<li>variable</li>
+<li>vars</li>
 <li>sql</li>
 <li>script</li>
-<li>wait</li>
+<li>send</li>
+<li>request</li>
 </ul>
-<h3 id="testcases-基类"><code>testcases</code> 基类</h3>
-<p><code>testcases</code> 下为 <code>list</code> 形式，可以编写数个测试用例。</p>
+<p><strong>vars</strong>
+用于定义测试一组环境变量。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">tmp_mobile</span><span class="p">:</span><span class="w"> </span><span class="m">15640079705</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">tmp_password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>sql</strong>
+用于SQL操作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">sql</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">查询</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l">knight</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">expresion</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">            </span><span class="w">            </span><span class="l">select username from users;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>script</strong>
+用于执行一个自定义脚本，该脚本由用户自行编写。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">call</span><span class="p">:</span><span class="w"> </span><span class="l">http.send</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">kwargs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">get</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;/user_types/&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">headers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;application/json;charset=UTF-8&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>request</strong>
+用于发送一个请求。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">post</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;/users/&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">json</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">            {
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;username&#34;: &#34;{{pm.name}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;user_types&#34;: [&#34;{{SA}}&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;mobile&#34;: &#34;{{tmp_mobile}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;email&#34;: &#34;{{pm.email}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;password&#34;: &#34;{{tmp_password}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;is_active&#34;: true
+</span></span></span><span class="line"><span class="cl"><span class="sd">            }</span><span class="w">            
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>send</strong>
+用于发送一个请求, 快捷方式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">send</span><span class="p">:</span><span class="w"> </span>!<span class="l">include ../api/turin.user_types.list.yaml</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="testcases"><code>testcases</code></h3>
+<p><code>testcases</code> 下为 <code>list</code> 形式，可以编写数个测试用例。
+一个测试用例结构组成如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">scenario</span><span class="p">:</span><span class="w"> </span><span class="l">正常登录场景</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l">normal,login</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">用新创建的用户名密码登录，期望登录成功</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">tokyo.accounts.login.func.001</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">precondition</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">json</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">            {
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;mobile&#34;: &#34;{{tmp_mobile}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;password&#34;: &#34;{{tmp_password}}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="sd">            }</span><span class="w">            
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">postcondition</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">export</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">user_id</span><span class="p">:</span><span class="w"> </span><span class="l">data.profile.id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">data.profile.username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验http状态码等于200</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">_code_, &#39;==&#39;, 200]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验接口耗时小于200ms</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">_time_, &#39;&lt;&#39;, 200]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验接口响应状态码等于0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">status_code, &#39;==&#39;, 0]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验user_id正确</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;data.profile.mobile&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;seq&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{{tmp_mobile}}&#39;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验username正确</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;data.profile.username&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;==&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{{username}}&#39;</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>scenario： 测试用例表标题</li>
+<li>tag：为此用例设置一个或多个tag</li>
+<li>description：详细描述该用例的用来做什么</li>
+<li>ref：关联的测试需求编号</li>
+<li>precondition：前置条件。可以设置 vars, sql, script, send, request等子组件。</li>
+<li>request：测试数据，即接口请求body</li>
+<li>postcondition：后置条件。可以设置 assertion, export, sql, script, send, request等子组件</li>
+</ul>
 <p>一个完整的 <code>sunflower</code> 测试用例文档如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -200,59 +393,105 @@
 </span><span class="lnt">41
 </span><span class="lnt">42
 </span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">config</span><span class="p">:</span><span class="w"> </span>!<span class="l">include ../api/tokyo.accounts.login.yaml</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">config</span><span class="p">:</span><span class="w"> </span>!<span class="l">include ../api/turin.accounts.login.yaml</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">background</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment_variable</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">mobile</span><span class="p">:</span><span class="w"> </span><span class="m">12344445555</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">variable</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="m">2023</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l">ok</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">tmp_mobile</span><span class="p">:</span><span class="w"> </span><span class="m">15640079705</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">tmp_password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="w">  </span><span class="nt">request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l">post</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;/users/&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">json</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">            {
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;username&#34;: &#34;{{pm.name}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;user_types&#34;: [&#34;{{SA}}&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;mobile&#34;: &#34;{{tmp_mobile}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;email&#34;: &#34;{{pm.email}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;password&#34;: &#34;{{tmp_password}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;is_active&#34;: true
+</span></span></span><span class="line"><span class="cl"><span class="sd">            }</span><span class="w">            
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">testcases</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="w">  </span><span class="nt">scenario</span><span class="p">:</span><span class="w"> </span><span class="l">验证用正确的手机号和密码，登录成功</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;login&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;login_normal&#39;</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">        作为一个企业管理员
-</span></span></span><span class="line"><span class="cl"><span class="sd">        我想要输入正确的手机号和密码
-</span></span></span><span class="line"><span class="cl"><span class="sd">        以便登录成功</span><span class="w">        
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">tokyo.accounts.func.01.01</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">##################################################################</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="w">  </span><span class="nt">scenario</span><span class="p">:</span><span class="w"> </span><span class="l">正常登录场景</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l">normal,login</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">用新创建的用户名密码登录，期望登录成功</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 需求关联</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">tokyo.accounts.login.func.001</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">precondition</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 环境变量组件：设置环境变量</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">environment_variable</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">mobile</span><span class="p">:</span><span class="w"> </span><span class="m">12344445555</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 临时变量组件：设置临时变量</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">variable</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="m">2023</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l">ok</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 脚本组件：调用一个Py脚本</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">script</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 数据库组件：数据库操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">sql</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 延时组件：延时操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">wait</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">json</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">            {
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;mobile&#34;: &#34;{{tmp_mobile}}&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="sd">                &#34;password&#34;: &#34;{{tmp_password}}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="sd">            }</span><span class="w">            
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">postcondition</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="w">  </span><span class="nt">request</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">headers</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;application/json;charset=UTF-8&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">json</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">                {
-</span></span></span><span class="line"><span class="cl"><span class="sd">                    &#34;mobile&#34;: &#34;{{mobile}}&#34;,
-</span></span></span><span class="line"><span class="cl"><span class="sd">                    &#34;password&#34;: &#34;{{password}}&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sd">                }</span><span class="w">                
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">export</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">user_id</span><span class="p">:</span><span class="w"> </span><span class="l">data.profile.id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">data.profile.username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验http状态码等于200</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">_code_, &#39;==&#39;, 200]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验接口耗时小于200ms</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">_time_, &#39;&lt;&#39;, 200]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验接口响应状态码等于0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">status_code, &#39;==&#39;, 0]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验user_id正确</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;data.profile.mobile&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;seq&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{{tmp_mobile}}&#39;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验username正确</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;data.profile.username&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;==&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{{username}}&#39;</span><span class="p">]</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="组件">组件</h2>
+</div><h2 id="子组件">子组件</h2>
 <p><code>sunflower</code> 测试用例文档由各种组件组成。组件均可以在测试用例中复用，意味在测试用例中的设置数量
 可以为1~N个。</p>
-<h3 id="environment_variable">environment_variable</h3>
-<p>环境变量组件。该组件将为 <code>sunflower</code> 测试设置环境变量。环境变量的作用域为整个测试环境，当测试环境变化时，
-该变量将自动销毁。</p>
+<h3 id="vars">vars</h3>
+<p>变量组件。该组件将为 <code>sunflower</code> 测试设置环境变量。</p>
+<ul>
+<li>在 vars 内设置的变量将会存储在sunflower上下文(context.e)中。</li>
+<li>在 vars 内设置的变量都可以在测试用例文档中引用, 以 <code>&quot;{{var}}&quot;</code> 形式。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="m">2023</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l">ok</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="export">export</h3>
+<p>变量提取组件。该组件用于从前置步骤(sql, script, send, request)中提取变量,
+存储在sunflower上下文(context.e)。组件语法如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -262,18 +501,100 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">environment_variable</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">mobile</span><span class="p">:</span><span class="w"> </span><span class="m">12344445555</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l">test</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l">var</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">export</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">user_id</span><span class="p">:</span><span class="w"> </span><span class="l">data.profile.id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">data.profile.username</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><ul>
+<li>select: 从 json, text，xml中提取变量</li>
+<li>vars: key 为变量名，value为提取表达式。
+<ul>
+<li>若select为json，则表达式为jmespath。</li>
+<li>若select为text，则表达式为正则表达式。</li>
+<li>若select为xml，则表达式为xpath。</li>
+</ul>
+</li>
+</ul>
+<p>从 export 提取的变量，都可以在后续步骤中以 <code>{{}}</code> 形式使用。</p>
+<p>与 <code>vars</code> 组件区别：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>vars</th>
+<th>export</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>key 为变量名, value为人为定义的变量值</td>
+<td>key 为变量名。value为 jmespath 表达式</td>
+</tr>
+<tr>
+<td>2</td>
+<td>手动定义的环境变量</td>
+<td>从前置步骤中提取的所需数据，设置为环境变量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="断言">断言</h2>
+<h3 id="断言组件">断言组件</h3>
+<p>断言组件书写形式如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="w">  </span><span class="nt">assertion</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">校验http状态码等于200</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">select</span><span class="p">:</span><span class="w"> </span><span class="l">json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">expect</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">_code_, &#39;==&#39;, 200]</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>description: 描述断言的对象及目的</li>
+<li>select: 选择从 json, text，xml中提取对应变量及进行断言。</li>
+<li>expect: 断言表达式。[实际结果, 断言条件, 期望结果]
+<ul>
+<li>实际结果可以是：jmespath、xpath、正则表达式之一</li>
+<li>断言条件见下方详述</li>
+<li>期望结果为手动填写</li>
+</ul>
+</li>
+</ul>
+<h3 id="断言条件">断言条件</h3>
+<p><code>sunflower</code> 中, 断言表达式一般写为 <code>[actual, condition, expect]</code>, <code>condition</code> 支持以下判断条件：</p>
+<ul>
+<li><strong>eq</strong>: 等于，一般用来判断整型。</li>
+<li><strong>neq</strong>: 不等于，一般用来判断整型。</li>
+<li><strong>lt</strong>: 小于，一般用来判断整型。</li>
+<li><strong>lt</strong>: 小于等于，一般用来判断整型。</li>
+<li><strong>gt</strong>: 大于，一般用来判断整型。</li>
+<li><strong>gteq</strong>: 大于等于，一般用来判断整型。</li>
+<li><strong>seq</strong>: 等于，一般用来判断字符串。</li>
+<li><strong>leq</strong>: 长度等于，一般用来判断字符串长度。</li>
+<li><strong>lgteq</strong>: 长度大于等于，一般用来判断字符串长度。</li>
+<li><strong>llt</strong>: 长度小于，一般用来判断字符串长度。</li>
+<li><strong>llteq</strong>: 长度小于等于，一般用来判断字符串长度。</li>
+<li><strong>sfeq</strong>: 长度模糊相等。</li>
+<li><strong>scot</strong>: 字符串包含, 判断期望结果包含在实际结果中。</li>
+<li><strong>cot</strong>: 通用包含, 判断期望结果包含在实际结果中，支持类型 <code>list</code>, <code>tuple</code>, <code>str</code>, <code>bytes</code>。</li>
+<li><strong>cod</strong>: 通用包含, 判断实际结果包含在期望结果中，支持类型 <code>list</code>, <code>tuple</code>, <code>str</code>, <code>bytes</code>。</li>
+<li><strong>sw</strong>: 开头判断, 判断实际结果的开头是否与期望结果开头相等。</li>
+<li><strong>ew</strong>: 结尾判断, 判断实际结果的结尾是否与期望结果开头相等。</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2025-11-19</span>
+                <span>更新于 2025-11-20</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
