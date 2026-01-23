@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leeyorke.github.io/flutter-1/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2025-12-11T20:31:31+08:00" />
-<meta property="article:modified_time" content="2025-12-11T20:31:31+08:00" /><meta property="og:site_name" content="leeyorke" />
+<meta property="article:modified_time" content="2025-12-11T22:16:40+08:00" /><meta property="og:site_name" content="leeyorke" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Flutter开发之路-环境搭建"/>
 <meta name="twitter:description" content="前言 用了很久的 microsoft todo 是个很好的待办清单工具，但是有以下缺点： 同步速度较慢。 没有艾森豪威尔矩阵。 不能与 obsidian 打通, （其实也有开源的插件，但比较难用）"/>
 <meta name="application-name" content="leeyorke">
-<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/flutter-1/" /><link rel="prev" href="https://leeyorke.github.io/ai-song/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/flutter-1/" /><link rel="prev" href="https://leeyorke.github.io/ai-song/" /><link rel="next" href="https://leeyorke.github.io/flutter-2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leeyorke.github.io\/flutter-1\/"
-        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "flutter","wordcount":  1435 ,
-        "url": "https:\/\/leeyorke.github.io\/flutter-1\/","datePublished": "2025-12-11T20:31:31+08:00","dateModified": "2025-12-11T20:31:31+08:00","publisher": {
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "flutter","wordcount":  1584 ,
+        "url": "https:\/\/leeyorke.github.io\/flutter-1\/","datePublished": "2025-12-11T20:31:31+08:00","dateModified": "2025-12-11T22:16:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -102,8 +102,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Flutter开发之路-环境搭建</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-12-11">2025-12-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1435 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-12-11">2025-12-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1584 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -122,7 +122,7 @@
 <li>
 <p>首要就是添加待办任务了。但是这个待办任务可以分类，可以有：临时待办、习惯、愿望清单、我的一天。</p>
 <ul>
-<li>我的一天。显示日程，主要是显示1天内可以完成的任务。就是说你要在某一天要做的事，如果到了那一天，都会再此分类下显示。</li>
+<li>我的一天。显示日程，主要是显示1天内可以完成的任务。就是说你要在某一天要做的事，如果到了那一天，都会在此分类下显示。</li>
 <li>习惯。没有期限、重复性比较强的任务。可设置执行时间，在时间点会提醒你。</li>
 <li>愿望清单。没有期限。只是做一个记录。</li>
 </ul>
@@ -138,8 +138,7 @@
 </li>
 </ul>
 <h1 id="安装环境">安装环境</h1>
-<p>本人是 <code>windows</code> 系统，在 <code>vscode</code> 上开发，故记录在 <code>win</code> 环境下安装 <code>flutter</code> 的过程。
-<code>flutter</code> 开发所需要的资源如下：</p>
+<p><code>flutter</code> 开发所需要的资源如下：</p>
 <ul>
 <li>Flutter SDK</li>
 <li>Android Studio</li>
@@ -413,7 +412,57 @@
 </div>
 </div><p>接着要创建一个文件夹 <code>.gradle</code> 在D盘，如 <code>&quot;D:\myworkspace\flutter_config\.gradle&quot;</code>，然后设置一个系统环境变量 <code>GRADLE_USER_HOME</code>，值为刚才的路径。再启动 Android Studio 的虚拟机。
 最后，运行 <code>flutter run</code>。等一会就能看到在模拟器里看见app了。</p>
-</div><div class="post-footer" id="post-footer">
+<h1 id="安装依赖">安装依赖</h1>
+<p>Pub 是 Dart 官方的包管理器。Flutter 也基于 Dart 并且可以使用大部分 Pub 中的库。
+安装依赖包的命令：<code>flutter pub get [PACKAGE_NAME]</code></p>
+<p>设置国内源加速下载。Google 官方已提供国内镜像  <code>pub.flutter-io.cn</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Windows</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">PUB_HOSTED_URL</span><span class="o">=</span>https://pub.flutter-io.cn
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">FLUTTER_STORAGE_BASE_URL</span><span class="o">=</span>https://storage.flutter-io.cn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#linux/macOS</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PUB_HOSTED_URL</span><span class="o">=</span>https://pub.flutter-io.cn
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FLUTTER_STORAGE_BASE_URL</span><span class="o">=</span>https://storage.flutter-io.cn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 临时使用镜像安装包</span>
+</span></span><span class="line"><span class="cl">flutter pub get --hosted-url https://pub.flutter-io.cn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清华源</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PUB_HOSTED_URL</span><span class="o">=</span><span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/dart-pub&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 永久设置</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PUB_HOSTED_URL=&#34;https://pub.flutter-io.cn&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export FLUTTER_STORAGE_BASE_URL=&#34;https://storage.flutter-io.cn&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Windows永久设置，将其添加到环境变量即可</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -436,14 +485,15 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/ai-song/" class="prev" rel="prev" title="如何使用ai翻唱一首歌"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>如何使用ai翻唱一首歌</a></div>
+    <div class="post-nav"><a href="/ai-song/" class="prev" rel="prev" title="如何使用ai翻唱一首歌"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>如何使用ai翻唱一首歌</a>
+            <a href="/flutter-2/" class="next" rel="next" title="Flutter开发之路-组件学习">Flutter开发之路-组件学习<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="utterances" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

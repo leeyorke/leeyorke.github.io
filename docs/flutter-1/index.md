@@ -9,15 +9,16 @@
 
 故产生了自己开发一个自用 `TODO` 应用的的想法。初步设想有以下功能：
 - 首要就是添加待办任务了。但是这个待办任务可以分类，可以有：临时待办、习惯、愿望清单、我的一天。
-    - 我的一天。显示日程，主要是显示1天内可以完成的任务。就是说你要在某一天要做的事，如果到了那一天，都会再此分类下显示。
+    - 我的一天。显示日程，主要是显示1天内可以完成的任务。就是说你要在某一天要做的事，如果到了那一天，都会在此分类下显示。
     - 习惯。没有期限、重复性比较强的任务。可设置执行时间，在时间点会提醒你。
     - 愿望清单。没有期限。只是做一个记录。
 
 - 艾森豪威尔矩阵。设置优先级及重要性后显示，只显示本周内需要执行的任务。
 - 番茄钟。用于设置专注模式。可将某些专注任务加进来。
 - 统计模式。将任务的执行数据统计生成报告。
+
 # 安装环境
-本人是 `windows` 系统，在 `vscode` 上开发，故记录在 `win` 环境下安装 `flutter` 的过程。
+
 `flutter` 开发所需要的资源如下：
 - Flutter SDK
 - Android Studio
@@ -175,3 +176,32 @@ include(":app")
 
 接着要创建一个文件夹 `.gradle` 在D盘，如 `"D:\myworkspace\flutter_config\.gradle"`，然后设置一个系统环境变量 `GRADLE_USER_HOME`，值为刚才的路径。再启动 Android Studio 的虚拟机。
 最后，运行 `flutter run`。等一会就能看到在模拟器里看见app了。
+
+# 安装依赖
+Pub 是 Dart 官方的包管理器。Flutter 也基于 Dart 并且可以使用大部分 Pub 中的库。
+安装依赖包的命令：`flutter pub get [PACKAGE_NAME]`
+
+设置国内源加速下载。Google 官方已提供国内镜像  `pub.flutter-io.cn`
+```bash
+# Windows
+set PUB_HOSTED_URL=https://pub.flutter-io.cn
+set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+#linux/macOS
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+# 临时使用镜像安装包
+flutter pub get --hosted-url https://pub.flutter-io.cn
+
+# 清华源
+PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+
+# 永久设置
+echo 'export PUB_HOSTED_URL="https://pub.flutter-io.cn"' >> ~/.zshrc
+echo 'export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"' >> ~/.zshrc
+source ~/.zshrc
+
+# Windows永久设置，将其添加到环境变量即可
+```
+

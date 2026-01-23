@@ -4,9 +4,33 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 11 Dec 2025 20:31:31 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>claude code配置</title>
+    <link>https://leeyorke.github.io/2026-01-23/</link>
+    <pubDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-01-23/</guid>
+    <description><![CDATA[需要先安装 git 和 node。 Calude Code下载 1 npm install -g @anthropic-ai/claude-code claude-code github仓库文档 Calude Code Router下载 用于国产模型代理。 1 npm install -g @musistudio/claude-code-router Calude Code Router配置 见]]></description>
+</item>
+<item>
+    <title>2025年终总结</title>
+    <link>https://leeyorke.github.io/2025-12-29/</link>
+    <pubDate>Mon, 29 Dec 2025 12:28:49 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2025-12-29/</guid>
+    <description><![CDATA[要事记 1月 回家过年，和大玮哥一起上坟。和妹夫，妹妹开车去超市买水。年夜饭和妈妈，妹妹一起吃火锅，爸爸没回家。 初三去舅舅家看望外公，浩浩开车，]]></description>
+</item>
+<item>
+    <title>Flutter开发之路-组件学习</title>
+    <link>https://leeyorke.github.io/flutter-2/</link>
+    <pubDate>Fri, 12 Dec 2025 13:26:42 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/flutter-2/</guid>
+    <description><![CDATA[先来一段代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 import &#39;package:flutter/material.dart&#39;; class ExpandedWidget extends StatelessWidget { const ExpandedWidget({super.key}); @override Widget build(BuildContext context) { return MaterialApp( // 根 Widget：提供 Material 设]]></description>
+</item>
+<item>
     <title>Flutter开发之路-环境搭建</title>
     <link>https://leeyorke.github.io/flutter-1/</link>
     <pubDate>Thu, 11 Dec 2025 20:31:31 &#43;0800</pubDate>
@@ -61,30 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/boxerindemnity/</guid>
     <description><![CDATA[庚子赔款退还的真相：美国退款的缘起与过程 嘿，兄弟，咱用抗吧老哥那股子直球硬核的调调，来掰扯庚子赔款（Boxer Indemnity，1901年]]></description>
-</item>
-<item>
-    <title>如何进行需求分析</title>
-    <link>https://leeyorke.github.io/2025-11-18/</link>
-    <pubDate>Tue, 18 Nov 2025 16:22:25 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2025-11-18/</guid>
-    <description><![CDATA[01 用xmind进行需求分析的步骤 产品名称 模块 功能 子功能 正常场景 验证&hellip;情况下&hellip;应该&hellip; 异常场景 情形一 情]]></description>
-</item>
-<item>
-    <title>记国庆节</title>
-    <link>https://leeyorke.github.io/2025-11-04/</link>
-    <pubDate>Tue, 04 Nov 2025 20:11:46 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2025-11-04/</guid>
-    <description><![CDATA[国庆节辞掉工作之后，压力相比在职时轻松多了，那种焦虑消失了。 妹妹结婚 我是 2025-09-26 辞职，27号休息了一天，28号坐高铁回家的，回到家休息了几天，父亲]]></description>
-</item>
-<item>
-    <title>python | 类方法、实例方法、静态方法的区别</title>
-    <link>https://leeyorke.github.io/python-method/</link>
-    <pubDate>Wed, 26 Apr 2023 16:08:36 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/python-method/</guid>
-    <description><![CDATA[示例 以下是一个简单的python 类方法、实例方法、静态方法的定义 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 class D: age]]></description>
 </item>
 </channel>
 </rss>
