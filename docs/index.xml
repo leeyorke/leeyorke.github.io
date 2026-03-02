@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Mon, 02 Mar 2026 15:42:38 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>直觉泵和其他思考工具阅读笔记 [1]</title>
+    <link>https://leeyorke.github.io/2026-03-01/</link>
+    <pubDate>Sun, 01 Mar 2026 11:16:17 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-03-01/</guid>
+    <description><![CDATA[犯错法 不要惧怕犯错，犯错不可避免。 犯错是取得进步的关键。 要犯伟大的错误，不要犯愚蠢性错误。 不要犯两次同样的错误。]]></description>
+</item>
+<item>
     <title>claude code配置</title>
     <link>https://leeyorke.github.io/2026-01-23/</link>
     <pubDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-19/</guid>
     <description><![CDATA[本文档介绍 sunflower 测试框架的用例结构组成。 基本组件 sunflower 测试用例文档由以下三个基本组件构成。 1 2 3 config: background: testcases: config config 通过 !include 标签用来引用 api 文档路径。 api 也是用ya]]></description>
-</item>
-<item>
-    <title>庚子赔款退还的真相</title>
-    <link>https://leeyorke.github.io/boxerindemnity/</link>
-    <pubDate>Tue, 18 Nov 2025 17:01:01 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/boxerindemnity/</guid>
-    <description><![CDATA[庚子赔款退还的真相：美国退款的缘起与过程 嘿，兄弟，咱用抗吧老哥那股子直球硬核的调调，来掰扯庚子赔款（Boxer Indemnity，1901年]]></description>
 </item>
 </channel>
 </rss>
