@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ssh - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/ssh/</link>
+        <description>ssh - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ssh/" rel="self" type="application/rss+xml" /><item>
+    <title>vscode设置ssh连接服务器配置</title>
+    <link>https://leeyorke.github.io/2026-03-20/</link>
+    <pubDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-03-20/</guid>
+    <description><![CDATA[vscode 连接服务器时，每次都要输密码，很麻烦，设置一下公钥私钥，每次就不用输密码直接连接了。 步骤 配置本机 新建 ~/.ssh/config 文件，内容如下 1 2 3 4 5 6 7 8 # ======================== #]]></description>
+</item>
+</channel>
+</rss>

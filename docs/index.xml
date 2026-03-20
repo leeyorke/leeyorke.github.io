@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Mon, 02 Mar 2026 15:42:38 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>vscode设置ssh连接服务器配置</title>
+    <link>https://leeyorke.github.io/2026-03-20/</link>
+    <pubDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-03-20/</guid>
+    <description><![CDATA[vscode 连接服务器时，每次都要输密码，很麻烦，设置一下公钥私钥，每次就不用输密码直接连接了。 步骤 配置本机 新建 ~/.ssh/config 文件，内容如下 1 2 3 4 5 6 7 8 # ======================== #]]></description>
+</item>
+<item>
     <title>直觉泵和其他思考工具阅读笔记 [1]</title>
     <link>https://leeyorke.github.io/2026-03-01/</link>
     <pubDate>Sun, 01 Mar 2026 11:16:17 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-20/</guid>
     <description><![CDATA[hugo 默认是不显示 mermaid 流程图的, 如果写了 mermaid 代码, 不会自动渲染，这就需要自行配置下。 windows 下配置流程 第一步。在博客根目录的 layouts 目录下创建 _default 目录，拷贝主题下]]></description>
-</item>
-<item>
-    <title>sunflower演进之路|用例model设计</title>
-    <link>https://leeyorke.github.io/2025-11-19/</link>
-    <pubDate>Wed, 19 Nov 2025 11:59:17 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2025-11-19/</guid>
-    <description><![CDATA[本文档介绍 sunflower 测试框架的用例结构组成。 基本组件 sunflower 测试用例文档由以下三个基本组件构成。 1 2 3 config: background: testcases: config config 通过 !include 标签用来引用 api 文档路径。 api 也是用ya]]></description>
 </item>
 </channel>
 </rss>
