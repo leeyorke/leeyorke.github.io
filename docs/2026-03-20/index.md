@@ -19,7 +19,7 @@ Host 46.153.204.xxx
   Port 22
 ```
 
-**IdentityFile** 是你的私钥，如果没有，键入以下生成命令, 将生成两个文件：`id_rsa.pub`、`id_rsa.pub` 在 `~/.ssh/` 目录下。
+**IdentityFile** 是你的私钥，如果没有，键入以下生成命令, 将生成两个文件，一个私钥，一个公钥：`id_rsa`、`id_rsa.pub` 在 `~/.ssh/` 目录下。
 ```bash
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
 ```
