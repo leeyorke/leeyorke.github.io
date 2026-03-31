@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>github ssh clone 慢的解决方案</title>
+    <link>https://leeyorke.github.io/2026-03-31/</link>
+    <pubDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-03-31/</guid>
+    <description><![CDATA[以下记录在 windows 上配置过程。 01 配置 ~/.ssh/config文件 1 2 3 4 5 6 7 8 9 # ======================== # 2. GitHub（通过本地 SOCKS5 代理） # ======================== Host github.com HostName github.com User git Port 22 IdentityFile ~/.ssh/id_ed25519]]></description>
+</item>
+<item>
     <title>vscode设置ssh连接服务器配置</title>
     <link>https://leeyorke.github.io/2026-03-20/</link>
     <pubDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-22/</guid>
     <description><![CDATA[yaml 中多行字符串的各种写法。 原始yaml 1 2 3 4 5 paragraph: Blank lines denote paragraph breaks alias: bar: baz 转成json 1 2 3 4 5 6 { &#34;paragraph&#34;: &#34;Blank lines denote paragraph breaks&#34;, &#34;alias&#34;: { &#34;bar&#34;: &#34;baz&#34; } } | 作用：| 会给每一行末尾]]></description>
-</item>
-<item>
-    <title>hugo 如何显示 mermaid 流程图</title>
-    <link>https://leeyorke.github.io/2025-11-20/</link>
-    <pubDate>Thu, 20 Nov 2025 21:25:21 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2025-11-20/</guid>
-    <description><![CDATA[hugo 默认是不显示 mermaid 流程图的, 如果写了 mermaid 代码, 不会自动渲染，这就需要自行配置下。 windows 下配置流程 第一步。在博客根目录的 layouts 目录下创建 _default 目录，拷贝主题下]]></description>
 </item>
 </channel>
 </rss>

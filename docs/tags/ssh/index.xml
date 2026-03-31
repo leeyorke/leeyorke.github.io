@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/ssh/</link>
         <description>ssh - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ssh/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ssh/" rel="self" type="application/rss+xml" /><item>
+    <title>github ssh clone 慢的解决方案</title>
+    <link>https://leeyorke.github.io/2026-03-31/</link>
+    <pubDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-03-31/</guid>
+    <description><![CDATA[以下记录在 windows 上配置过程。 01 配置 ~/.ssh/config文件 1 2 3 4 5 6 7 8 9 # ======================== # 2. GitHub（通过本地 SOCKS5 代理） # ======================== Host github.com HostName github.com User git Port 22 IdentityFile ~/.ssh/id_ed25519]]></description>
+</item>
+<item>
     <title>vscode设置ssh连接服务器配置</title>
     <link>https://leeyorke.github.io/2026-03-20/</link>
     <pubDate>Fri, 20 Mar 2026 20:06:35 &#43;0800</pubDate>
