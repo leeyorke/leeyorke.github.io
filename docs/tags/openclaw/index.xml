@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>openclaw - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/openclaw/</link>
+        <description>openclaw - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 05 Apr 2026 17:19:24 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/openclaw/" rel="self" type="application/rss+xml" /><item>
+    <title>nanobot学习 - 01 - 开发环境安装</title>
+    <link>https://leeyorke.github.io/2026-04-05-1719/</link>
+    <pubDate>Sun, 05 Apr 2026 17:19:24 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-04-05-1719/</guid>
+    <description><![CDATA[🐈 nanobot 是一款受 OpenClaw 启发的超轻量级个人AI助手。 个人PC环境 : win10、wsl2 wsl2 的环境配置见 WSL2 代理配置及 GitHub SSH 加速终极指南 01 克隆仓库 fork 仓库：HK]]></description>
+</item>
+</channel>
+</rss>

@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 05 Apr 2026 16:27:24 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 05 Apr 2026 17:19:24 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>nanobot学习 - 01 - 开发环境安装</title>
+    <link>https://leeyorke.github.io/2026-04-05-1719/</link>
+    <pubDate>Sun, 05 Apr 2026 17:19:24 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-04-05-1719/</guid>
+    <description><![CDATA[🐈 nanobot 是一款受 OpenClaw 启发的超轻量级个人AI助手。 个人PC环境 : win10、wsl2 wsl2 的环境配置见 WSL2 代理配置及 GitHub SSH 加速终极指南 01 克隆仓库 fork 仓库：HK]]></description>
+</item>
+<item>
     <title>WSL2 代理配置及 GitHub SSH 加速终极指南</title>
     <link>https://leeyorke.github.io/2026-04-05/</link>
     <pubDate>Sun, 05 Apr 2026 16:27:24 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/ai-song/</guid>
     <description><![CDATA[下载软件：https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-W]]></description>
-</item>
-<item>
-    <title>一日一技|python中dataclass的使用</title>
-    <link>https://leeyorke.github.io/2025-11-23/</link>
-    <pubDate>Sun, 23 Nov 2025 20:45:42 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2025-11-23/</guid>
-    <description><![CDATA[默认值的定义 1 2 3 4 5 6 @dataclass class Script: description: str call: str kwargs: Dict[str, Any] = field(default_factory=dict) export: Optional[Export] = None description: str 这种定义意味着: 告诉用户该类在初始化时description参数类型应该为str]]></description>
 </item>
 </channel>
 </rss>
