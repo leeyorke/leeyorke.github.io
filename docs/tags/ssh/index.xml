@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/ssh/</link>
         <description>ssh - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ssh/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 05 Apr 2026 16:27:24 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ssh/" rel="self" type="application/rss+xml" /><item>
+    <title>WSL2 代理配置及 GitHub SSH 加速终极指南</title>
+    <link>https://leeyorke.github.io/2026-04-05/</link>
+    <pubDate>Sun, 05 Apr 2026 16:27:24 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-04-05/</guid>
+    <description><![CDATA[Win10 NAT 模式版 1. 背景说明 项目 详情 环境 Windows 10 (Version 19044) + WSL2 网络模式 NAT（不支持镜像网络模式，Win10 版本限制） 宿主机虚拟网卡 IP 172.22.176.1]]></description>
+</item>
+<item>
     <title>github ssh clone 慢的解决方案</title>
     <link>https://leeyorke.github.io/2026-03-31/</link>
     <pubDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</pubDate>

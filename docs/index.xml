@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 05 Apr 2026 16:27:24 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>WSL2 代理配置及 GitHub SSH 加速终极指南</title>
+    <link>https://leeyorke.github.io/2026-04-05/</link>
+    <pubDate>Sun, 05 Apr 2026 16:27:24 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-04-05/</guid>
+    <description><![CDATA[Win10 NAT 模式版 1. 背景说明 项目 详情 环境 Windows 10 (Version 19044) + WSL2 网络模式 NAT（不支持镜像网络模式，Win10 版本限制） 宿主机虚拟网卡 IP 172.22.176.1]]></description>
+</item>
+<item>
     <title>github ssh clone 慢的解决方案</title>
     <link>https://leeyorke.github.io/2026-03-31/</link>
     <pubDate>Tue, 31 Mar 2026 22:32:11 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2025-11-23/</guid>
     <description><![CDATA[默认值的定义 1 2 3 4 5 6 @dataclass class Script: description: str call: str kwargs: Dict[str, Any] = field(default_factory=dict) export: Optional[Export] = None description: str 这种定义意味着: 告诉用户该类在初始化时description参数类型应该为str]]></description>
-</item>
-<item>
-    <title>一日一技|yaml中的多行字符串</title>
-    <link>https://leeyorke.github.io/2025-11-22/</link>
-    <pubDate>Sat, 22 Nov 2025 08:12:37 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2025-11-22/</guid>
-    <description><![CDATA[yaml 中多行字符串的各种写法。 原始yaml 1 2 3 4 5 paragraph: Blank lines denote paragraph breaks alias: bar: baz 转成json 1 2 3 4 5 6 { &#34;paragraph&#34;: &#34;Blank lines denote paragraph breaks&#34;, &#34;alias&#34;: { &#34;bar&#34;: &#34;baz&#34; } } | 作用：| 会给每一行末尾]]></description>
 </item>
 </channel>
 </rss>
