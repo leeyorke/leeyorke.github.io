@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/claude-code/</link>
         <description>Claude Code - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/claude-code/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 08 Apr 2026 17:16:50 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/claude-code/" rel="self" type="application/rss+xml" /><item>
+    <title>claude相关配置问题</title>
+    <link>https://leeyorke.github.io/2026-04-08/</link>
+    <pubDate>Wed, 08 Apr 2026 17:16:50 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-04-08/</guid>
+    <description><![CDATA[claude 命令无法使用 1 2 3 ➜ claude -c claude: The term &#39;claude&#39; is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. npm list -g 也不见 @anthropic-]]></description>
+</item>
+<item>
     <title>claude code配置</title>
     <link>https://leeyorke.github.io/2026-01-23/</link>
     <pubDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</pubDate>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>claude相关配置问题 - leeyorke的个人博客</title><meta name="Description" content="leeyorke的个人博客"><meta property="og:title" content="claude相关配置问题" />
+<meta property="og:description" content="claude 命令无法使用 1 2 3 ➜ claude -c claude: The term &#39;claude&#39; is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. npm list -g 也不见 @anthropic-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leeyorke.github.io/2026-04-08/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-04-08T17:16:50+08:00" />
+<meta property="article:modified_time" content="2026-04-08T17:16:50+08:00" /><meta property="og:site_name" content="leeyorke" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="claude相关配置问题"/>
+<meta name="twitter:description" content="claude 命令无法使用 1 2 3 ➜ claude -c claude: The term &#39;claude&#39; is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. npm list -g 也不见 @anthropic-"/>
+<meta name="application-name" content="leeyorke">
+<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/2026-04-08/" /><link rel="prev" href="https://leeyorke.github.io/2026-04-07/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "claude相关配置问题",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/leeyorke.github.io\/2026-04-08\/"
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "claude code, wsl","wordcount":  1071 ,
+        "url": "https:\/\/leeyorke.github.io\/2026-04-08\/","datePublished": "2026-04-08T17:16:50+08:00","dateModified": "2026-04-08T17:16:50+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "leeyorke"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="leeyorke的个人博客">LEEYORKE</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="leeyorke的个人博客">LEEYORKE</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">claude相关配置问题</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-04-08">2026-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1071 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#claude-命令无法使用">claude 命令无法使用</a></li>
+    <li><a href="#claude-code权限问题">claude code权限问题</a></li>
+    <li><a href="#如何在ubuntu-2004实现一键切换供应商">如何在Ubuntu-20.04实现一键切换供应商</a></li>
+    <li><a href="#claude-code-退出后屏幕有残留现象">Claude Code 退出后屏幕有“残留”现象</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="claude-命令无法使用">claude 命令无法使用</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">claude</span> <span class="n">-c</span>
+</span></span><span class="line"><span class="cl"><span class="n">claude</span><span class="err">:</span> <span class="n">The</span> <span class="n">term</span> <span class="s1">&#39;claude&#39;</span> <span class="n">is</span> <span class="n">not</span> <span class="n">recognized</span> <span class="n">as</span> <span class="n">a</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">cmdlet</span><span class="p">,</span> <span class="k">function</span><span class="p">,</span> <span class="n">script</span> <span class="n">file</span><span class="p">,</span> <span class="n">or</span> <span class="n">executable</span> <span class="n">program</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Check</span> <span class="n">the</span> <span class="n">spelling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">name</span><span class="p">,</span> <span class="n">or</span> <span class="k">if</span> <span class="n">a</span> <span class="n">path</span> <span class="n">was</span> <span class="n">included</span><span class="p">,</span> <span class="n">verify</span> <span class="n">that</span> <span class="n">the</span> <span class="n">path</span> <span class="n">is</span> <span class="n">correct</span> <span class="n">and</span> <span class="k">try</span> <span class="n">again</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>npm list -g</code> 也不见 @anthropic-ai/claude-code了。</p>
+<p>问题原因：在wsl上装用原生命令 <code>curl -fsSL https://claude.ai/install.sh | bash</code> 装claude code, 会把本地通过npm等其他方式安装的给删掉。
+解决方式：</p>
+<ul>
+<li>
+<p>先删除原生安装：<code>claude uninstall</code>, <code>rm -f $(which claude)</code></p>
+</li>
+<li>
+<p>确保删除干净：<code>claude --version</code></p>
+</li>
+<li>
+<p>禁止 将 Windows 的环境变量 PATH 自动添加到 Linux 的 PATH 中。<code>vi /etc/wsl.conf</code>。这样wsl不会扫描到window上的nvm和npm。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>interop<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">appendWindowsPath</span><span class="o">=</span><span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>在wsl上安装nvm，依次下面的命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh <span class="p">|</span> bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.nvm&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -s <span class="s2">&#34;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&#34;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -s <span class="s2">&#34;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&#34;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nvm -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nvm install --lts
+</span></span><span class="line"><span class="cl">node -v
+</span></span><span class="line"><span class="cl">npm -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装claude code，不要从官方脚本/apt安装，感觉有很多坑。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装最新版</span>
+</span></span><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装指定版本</span>
+</span></span><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code@2.1.91
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置 <code>~/.claude/backups/.claude.json.backup.1775639744028</code>，解决登录的问题，不然一直让你登录，无法使用第三方订阅。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在顶层配置加入</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;hasCompletedOnboarding&#34;</span>: true,
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>最后重新在powershell安装本地的claude code</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">install</span> <span class="n">-g</span> <span class="nv">@anthropic</span><span class="n">-ai</span><span class="p">/</span><span class="nb">claude-code</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>这样就可以同时在Linux、Windows上使用claude code了。</p>
+<h2 id="claude-code权限问题">claude code权限问题</h2>
+<p>没有在wsl上安装claude code前，我是进到wsl路径下，再使用本地claude code写代码的，但是这有个问题
+操作 \wsl.localhost\Ubuntu-20.04\home这样的目录，每一次编辑都要权限，烦得要死。</p>
+<p>解决方式，只能再wsl安装新的claude code。</p>
+<h2 id="如何在ubuntu-2004实现一键切换供应商">如何在Ubuntu-20.04实现一键切换供应商</h2>
+<p>cc-swtich 是GUI软件，最低支持Ubuntu-22.04，我是Ubuntu-20.04，用不了这个软件，要用只能升级为Ubuntu-22.04.
+很麻烦，所以直接写个脚本通过修改软链接的方式来切换 <code>~/.claude/settings.json</code> 里的环境变量就行。</p>
+<p>第一步创建脚本， <code>vi ~/cc-swtich.sh</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.claude&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="nv">$1</span> in
+</span></span><span class="line"><span class="cl">    m<span class="p">|</span>minimax<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        ln -sf <span class="s2">&#34;</span><span class="nv">$DIR</span><span class="s2">/settings.minimax.json&#34;</span> <span class="s2">&#34;</span><span class="nv">$DIR</span><span class="s2">/settings.json&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;🚀 已切换到 MiniMax 模式&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    v<span class="p">|</span>volces<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        ln -sf <span class="s2">&#34;</span><span class="nv">$DIR</span><span class="s2">/settings.volces.json&#34;</span> <span class="s2">&#34;</span><span class="nv">$DIR</span><span class="s2">/settings.json&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;🎨 已切换到 volces 模式&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    *<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;用法: cc m (切换到 MiniMax) 或 cc v (切换到volces)&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第二步，增加权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 增加权限</span>
+</span></span><span class="line"><span class="cl">chmod +x ~/cc-swtich.sh<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第三步，增加快捷命令</p>
+<p><code>vi .bashrc</code> 写入以下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">alias cc=&#39;~/cc-switch.sh&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后 刷新配置 <code>source ~/.bashrc</code>。</p>
+<h2 id="claude-code-退出后屏幕有残留现象">Claude Code 退出后屏幕有“残留”现象</h2>
+<p>这个在windows上没发现，再Linux上好像有。</p>
+<p>解决方式：在 <code>settingsd.json</code>中加入：<code>&quot;CLAUDE_CODE_NO_FLICKER&quot;: &quot;1&quot;</code></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-04-08</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2026-04-08/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://leeyorke.github.io/2026-04-08/" data-title="claude相关配置问题" data-hashtags="claude code,wsl"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://leeyorke.github.io/2026-04-08/" data-hashtag="claude code"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://leeyorke.github.io/2026-04-08/" data-title="claude相关配置问题"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://leeyorke.github.io/2026-04-08/" data-title="claude相关配置问题"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://leeyorke.github.io/2026-04-08/" data-title="claude相关配置问题" data-ralateuid="u/"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/claude-code/">Claude Code</a>,&nbsp;<a href="/tags/wsl/">wsl</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2026-04-07/" class="prev" rel="prev" title="用5W3H解释clarify技能有什么用"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>用5W3H解释clarify技能有什么用</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"leeyorke/leeyorke.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://plausible.io/js/plausible.js" async defer data-domain="leeyorke.github.io"></script>
+
+    </body>
+</html>

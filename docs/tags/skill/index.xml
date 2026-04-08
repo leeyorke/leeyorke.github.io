@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>skill - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/skill/</link>
+        <description>skill - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 07 Apr 2026 10:20:47 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/skill/" rel="self" type="application/rss+xml" /><item>
+    <title>用5W3H解释clarify技能有什么用</title>
+    <link>https://leeyorke.github.io/2026-04-07/</link>
+    <pubDate>Tue, 07 Apr 2026 10:20:47 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-04-07/</guid>
+    <description><![CDATA[what 是什么？ clarify-skill 是一个命题分解与决策澄清系统。工作原理如下： 外层 · 维特根斯坦（扫描） → 发现哪里模糊，把复合表述拆成原子单元 中层 · 苏格拉底（挖掘）]]></description>
+</item>
+</channel>
+</rss>
