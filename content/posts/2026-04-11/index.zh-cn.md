@@ -3,8 +3,8 @@ title: "在 claude code 中为 MiniMax 模型设置 statusline"
 date: 2026-04-11T22:19:20+08:00
 lastmod:
 draft: false
-tags:
-categories:
+tags: ["claude code", "agent", "AI", "statusline"]
+categories: ["claude", "AI"]
 description: ""
 ---
 
