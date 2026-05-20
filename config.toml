@@ -47,7 +47,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     pre = ""
     # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
     post = ""
-    name = "文章"
+    name = "posts"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
     title = ""
@@ -56,7 +56,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     identifier = "tags"
     pre = ""
     post = ""
-    name = "标签"
+    name = "tags"
     url = "/tags/"
     title = ""
   [[menu.main]]
@@ -64,7 +64,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     identifier = "categories"
     pre = ""
     post = ""
-    name = "分类"
+    name = "categories"
     url = "/categories/"
     title = ""
   [[menu.main]]
@@ -72,7 +72,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       identifier = "about"
       pre = ""
       post = ""
-      name = "关于"
+      name = "about"
       url = "/about/"
       title = ""
 
@@ -93,6 +93,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   description = "leeyorke的个人博客"
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = ["images/logo.png"]
+  customCSS = ["css/_custom.scss"]
 
   # 页面头部导航栏配置
   [params.header]
@@ -119,7 +120,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     #  自定义内容 (支持 HTML 格式)
     custom = ''
     #  是否显示 Hugo 和主题信息
-    hugo = true
+    hugo = false
     #  是否显示版权信息
     copyright = true
     #  是否显示作者
@@ -319,7 +320,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # 是否使用目录
       enable = true
       #  是否保持使用文章前面的静态目录
-      keepStatic = true
+      keepStatic = false
       # 是否使侧边目录自动折叠展开
       auto = true
     #  代码配置
@@ -328,6 +329,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       copy = true
       # 默认展开显示的代码行数
       maxShownLines = 50
+      # 浅色模式下的代码高亮主题
+      lightPlotly = "github"
+      # 深色模式下的代码高亮主题
+      darkPlotly = "monokai"
     #  KaTeX 数学公式
     [params.page.math]
       enable = true
