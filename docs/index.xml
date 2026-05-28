@@ -4,9 +4,17 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 15 Apr 2026 17:44:31 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 28 May 2026 22:43:36 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>哀中文之式微</title>
+    <link>https://leeyorke.github.io/2026-05-28/</link>
+    <pubDate>Thu, 28 May 2026 22:43:36 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-05-28/</guid>
+    <description><![CDATA[流水账 今天一早起来，去看自己今天有什么习惯要打卡，最底下是回顾单词本。按照以往的习惯一一复习完之后，发现基本上所有单词都记住了，但是肯定不是]]></description>
+</item>
+<item>
     <title>AI时代难而正确的事是什么？</title>
     <link>https://leeyorke.github.io/2026-04-15/</link>
     <pubDate>Wed, 15 Apr 2026 17:44:31 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2026-03-01/</guid>
     <description><![CDATA[犯错法 不要惧怕犯错，犯错不可避免。 犯错是取得进步的关键。 要犯伟大的错误，不要犯愚蠢性错误。 不要犯两次同样的错误。]]></description>
-</item>
-<item>
-    <title>claude code配置</title>
-    <link>https://leeyorke.github.io/2026-01-23/</link>
-    <pubDate>Fri, 23 Jan 2026 00:54:19 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2026-01-23/</guid>
-    <description><![CDATA[需要先安装 git 和 node。 Calude Code下载 1 npm install -g @anthropic-ai/claude-code claude-code github仓库文档 Calude Code Router下载 用于国产模型代理。 1 npm install -g @musistudio/claude-code-router Calude Code Router配置 见]]></description>
 </item>
 </channel>
 </rss>

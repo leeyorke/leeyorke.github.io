@@ -121,9 +121,9 @@ a.header-mark,
     font-size: 18px !important;
 }
 
-/* 让代码块的外层包裹框显示红色边框 */
+/* 让代码块的外层包裹框显示白色边框 */
 .single .content .highlight {
-    border: 1px solid #d8d7d7 !important; /* 1px宽、实线、红色 */
+    border: 1px solid #d8d7d7 !important; /* 1px宽、实线、白色 */
     border-radius: 10px !important;
     overflow: hidden !important;
 }
@@ -161,4 +161,58 @@ a.header-mark,
 .typeit {
     font-family: Inter !important;
     color: #888 !important;
+}
+
+/* 增大代码块与正文之间的上下间距 */
+.single .content .highlight {
+    /* 第一个值 1.5rem 代表“上间距”和“下间距”，可以根据需要调大（如 2rem）
+       第二个值 auto 代表左右居中
+    */
+    margin: 2rem auto !important;
+}
+
+/* ==================== 代码块滚动条优化 ==================== */
+
+/* 1. 默认状态：强行隐藏代码块的横向滚动条 */
+.single .content .highlight .chroma,
+.single .content .highlight .lntable,
+.single .content .highlight {
+    /* 通过标准属性确保在所有浏览器上默认隐藏滚动条 */
+    scrollbar-width: none; /* 针对 Firefox */
+    -ms-overflow-style: none; /* 针对 IE/Edge */
+}
+
+/* 针对 Chrome, Safari 和最新版 Edge 的默认隐藏 */
+.single .content .highlight ::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
+
+
+/* 2. Hover 状态：当鼠标悬停在代码块上时，恢复显示横向滚动条 */
+.single .content .highlight:hover .chroma,
+.single .content .highlight:hover .lntable,
+.single .content .highlight:hover {
+    scrollbar-width: auto; /* 恢复 Firefox */
+}
+
+/* 针对 Chrome, Safari 和最新版 Edge 恢复滚动条样式 */
+.single .content .highlight:hover ::-webkit-scrollbar {
+    height: 6px !important; /* 横向滚动条的高度 */
+}
+
+/* 自定义滚动条滑块样式（让它看起来更精致、有透明度） */
+.single .content .highlight:hover ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2) !important; /* 滑块颜色（20% 透明度的黑） */
+    border-radius: 4px !important;              /* 滑块圆角 */
+}
+
+.single .content .highlight:hover ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4) !important; /* 鼠标直接放到滚动条上时加深颜色 */
+}
+
+/* 滚动条轨道（保持透明，不遮挡代码底色） */
+.single .content .highlight:hover ::-webkit-scrollbar-track {
+    background: transparent !important;
 }
