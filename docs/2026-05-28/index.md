@@ -31,7 +31,7 @@
 
 <div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; margin: 15px;">
   <figure style="flex: 1; text-align: center; margin: 0;">
-    <img src="images/msedge_8aotbp2Mjd.png" style="width: 50%;">
+    <img src="images/msedge_8aotbp2Mjd.png" style="width: 100%;">
     <figcaption>图1：哀中文之式微</figcaption>
   </figure>
 </div>

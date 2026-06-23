@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/ai/</link>
         <description>AI - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 15 Apr 2026 17:44:31 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 23 Jun 2026 20:58:17 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+    <title>nanobot配置obsidian mcp server</title>
+    <link>https://leeyorke.github.io/2026-06-23/</link>
+    <pubDate>Tue, 23 Jun 2026 20:58:17 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-06-23/</guid>
+    <description><![CDATA[背景 推上刷到 How to Build an AI Second Brain With Claude and Obsidian That Gets Smarter Every Day (Full Guide)，直接进行实践。不幸遇到了错误。 环境 nanobot 运行在 wsl2 里，并配置代理为 172.17.121]]></description>
+</item>
+<item>
     <title>AI时代难而正确的事是什么？</title>
     <link>https://leeyorke.github.io/2026-04-15/</link>
     <pubDate>Wed, 15 Apr 2026 17:44:31 &#43;0800</pubDate>

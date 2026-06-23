@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/posts/</link>
         <description>所有文章 | leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Thu, 28 May 2026 22:43:36 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 23 Jun 2026 20:58:17 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>nanobot配置obsidian mcp server</title>
+    <link>https://leeyorke.github.io/2026-06-23/</link>
+    <pubDate>Tue, 23 Jun 2026 20:58:17 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-06-23/</guid>
+    <description><![CDATA[背景 推上刷到 How to Build an AI Second Brain With Claude and Obsidian That Gets Smarter Every Day (Full Guide)，直接进行实践。不幸遇到了错误。 环境 nanobot 运行在 wsl2 里，并配置代理为 172.17.121]]></description>
+</item>
+<item>
     <title>哀中文之式微</title>
     <link>https://leeyorke.github.io/2026-05-28/</link>
     <pubDate>Thu, 28 May 2026 22:43:36 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2026-03-20/</guid>
     <description><![CDATA[vscode 连接服务器时，每次都要输密码，很麻烦，设置一下公钥私钥，每次就不用输密码直接连接了。 步骤 配置本机 新建 ~/.ssh/config 文件，内容如下 1 2 3 4 5 6 7 8 # ======================== #]]></description>
-</item>
-<item>
-    <title>直觉泵和其他思考工具阅读笔记 [1]</title>
-    <link>https://leeyorke.github.io/2026-03-01/</link>
-    <pubDate>Sun, 01 Mar 2026 11:16:17 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2026-03-01/</guid>
-    <description><![CDATA[犯错法 不要惧怕犯错，犯错不可避免。 犯错是取得进步的关键。 要犯伟大的错误，不要犯愚蠢性错误。 不要犯两次同样的错误。]]></description>
 </item>
 </channel>
 </rss>
