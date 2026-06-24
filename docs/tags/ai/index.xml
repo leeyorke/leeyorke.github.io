@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/ai/</link>
         <description>AI - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 23 Jun 2026 20:58:17 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 24 Jun 2026 16:06:38 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+    <title>nanobot配置obsidian mcp server(V2)</title>
+    <link>https://leeyorke.github.io/2026-06-24/</link>
+    <pubDate>Wed, 24 Jun 2026 16:06:38 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-06-24/</guid>
+    <description><![CDATA[方案优化点 V1方案: nanobot配置obsidian mcp server 不太合理。 因为通过执行命令进行宿主机监听 172.17.121.1，在加上mcp se]]></description>
+</item>
+<item>
     <title>nanobot配置obsidian mcp server</title>
     <link>https://leeyorke.github.io/2026-06-23/</link>
     <pubDate>Tue, 23 Jun 2026 20:58:17 &#43;0800</pubDate>
