@@ -2,7 +2,7 @@
 
 
 - 历史版本安装包：[https://pan.quark.cn/s/b8e47570d45d#/list/share](https://pan.quark.cn/s/b8e47570d45d#/list/share)
-- 网易黁各个客户端收录安装包收录：[https://blog.amarea.cn/archives/netease-cloudmusic-history-version.html](https://blog.amarea.cn/archives/netease-cloudmusic-history-version.html)
+- 网易云各个客户端收录安装包收录：[https://blog.amarea.cn/archives/netease-cloudmusic-history-version.html](https://blog.amarea.cn/archives/netease-cloudmusic-history-version.html)
 
 ## 背景
 - Android 14
@@ -27,6 +27,14 @@ Performing Streamed Install
 # 手机一步步点击安装打印 Success 就成功
 Success
 ```
+
+终于不再吃屎了！
+<div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; margin: 15px;">
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="images/neteas-origin.png" style="width: 270px; height: auto;">
+    <figcaption>图1：网易云 v5.1.0</figcaption>
+  </figure>
+</div>
 
 ## 阻止烦人的自动更新及其他没意义的请求
 我已经抓包了更新接口，将以下规则配置到代理软件中REJECT，比如 clash 里即可拦截。
