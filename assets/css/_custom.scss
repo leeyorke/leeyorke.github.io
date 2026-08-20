@@ -3,6 +3,15 @@
 // 自定义样式
 // ==============================
 
+/* sspai 社区图标字体（用于引用块装饰引号） */
+@font-face {
+    font-family: 'sspai_community_icon';
+    src: url('/fonts/sspai_community_icon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 :root {
     --toc-font-size: 14px;          /* 统一控制目录字号 */
     --toc-weight-normal: 300;      /* 未激活时的字重（常规） */
@@ -79,20 +88,62 @@ a.header-mark,
 }
 
 /* 2. 激活状态（Active）：侧边自动目录 & 文章内固定目录 */
-#toc-auto .toc-content a.active,
+#toc-auto .toc-content a.active {
+    font-weight: var(--toc-weight-active) !important;
+    color: #888 !important;
+    font-size: var(--toc-font-size) !important;
+}
 .toc .toc-content a.active {
-    font-weight: var(--toc-weight-active) !important; /* 激活时文字加粗 (700为粗体，你可以根据需要调到 900) */
-    color: #000000 !important;   /* 激活时文字颜色变黑 */
+    font-weight: var(--toc-weight-active) !important;
+    color: #888 !important;
     font-size: var(--toc-font-size) !important;
 }
 
 /* 3. 激活状态下的伪元素：只在激活时显示 | 并加粗 */
-#toc-auto .toc-content a.active::before,
-.toc .toc-content a.active::before {
-    // content: "|" !important;      /* 只有激活时才显示竖线 */
-    font-weight: var(--toc-weight-active) !important;;  /* 竖线本身也加粗 */
-    color: #000000 !important;    /* 激活时竖线颜色变黑 */
+#toc-auto .toc-content a.active::before {
+    font-weight: var(--toc-weight-active) !important;
+    color: #888 !important;
     font-size: var(--toc-font-size) !important;
+}
+.toc .toc-content a.active::before {
+    font-weight: var(--toc-weight-active) !important;
+    color: #888 !important;
+    font-size: var(--toc-font-size) !important;
+}
+
+[theme=dark] #toc-auto .toc-content a.active {
+    color: #c9d1d9 !important;
+}
+[theme=dark] .toc .toc-content a.active {
+    color: #c9d1d9 !important;
+}
+
+[theme=dark] #toc-auto .toc-content a.active::before {
+    color: #c9d1d9 !important;
+}
+[theme=dark] .toc .toc-content a.active::before {
+    color: #c9d1d9 !important;
+}
+
+/* 页面正文宽度控制：覆盖主题默认宽度 */
+.page {
+    max-width: 800px !important;   /* 最大宽度，改成你想要的值 */
+    width: 50% !important;         /* 默认宽度百分比 */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media only screen and (max-width: 1440px) {
+    .page { width: 50% !important; }
+}
+@media only screen and (max-width: 1200px) {
+    .page { width: 45% !important; }
+}
+@media only screen and (max-width: 960px) {
+    .page { width: 80% !important; }
+}
+@media only screen and (max-width: 680px) {
+    .page { width: 92% !important; }
 }
 
 /* 4. 全局链接基础样式（保留你的基础设定） */
@@ -112,9 +163,52 @@ a.header-mark,
 }
 
 .single .content blockquote {
-    border-radius: 10px;
-    border-left: 0.5rem solid #a83333;
-    background-color: rgba(253, 107, 107, 0.2);
+    position: relative !important;
+    display: block !important;
+    margin: 16px 0 16px 0 !important;
+    padding: 40px 0 12px 16px !important;
+    background: transparent !important;
+    border: none !important;
+    border-left: 4px solid #d0d7de !important;
+    border-radius: 0 !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 1.65 !important;
+    color: #24292f !important;
+    text-align: left !important;
+}
+
+/* 左上角装饰性「」引号标 */
+.single .content blockquote::before {
+    content: "\e969" !important;
+    position: absolute !important;
+    top: 8px !important;
+    left: 12px !important;
+    font-size: 26px !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    line-height: 1 !important;
+    font-family: 'sspai_community_icon' !important;
+    color: #d0d7de !important;
+    pointer-events: none !important;
+}
+
+/* 引用块内段落的左边距，避免文字和引号标贴太近 */
+.single .content blockquote p {
+    margin-left: 6px !important;
+    text-align: justify !important;
+}
+
+[theme=dark] .single .content blockquote {
+    background: transparent !important;
+    border: none !important;
+    border-left: 4px solid #484f58 !important;
+    border-radius: 0 !important;
+    color: #c9d1d9 !important;
+}
+
+[theme=dark] .single .content blockquote::before {
+    color: #484f58 !important;
 }
 
 .header-title {
@@ -122,9 +216,19 @@ a.header-mark,
     font-size: 18px !important;
 }
 
-/* 让代码块的外层包裹框显示白色边框 */
+/* 代码块外框线：浅色灰 / 深色灰，避免白色边框 */
 .single .content .highlight {
-    border: 1px solid #d8d7d7 !important; /* 1px宽、实线、白色 */
+    border: 1px solid #d0d7de !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+[theme=dark] .single .content .highlight {
+    border-color: #30363d !important;
+}
+
+/* 文章内表格圆角，和代码块一致 */
+.single .content table {
     border-radius: 10px !important;
     overflow: hidden !important;
 }
@@ -216,4 +320,276 @@ a.header-mark,
 /* 滚动条轨道（保持透明，不遮挡代码底色） */
 .single .content .highlight:hover ::-webkit-scrollbar-track {
     background: transparent !important;
+}
+
+/* ================================================================
+ * 代码配色：GitHub 风格
+ * 浅色 → github-light  深色 → github-dark
+ * LoveIt 主题使用 Chroma 的类名（k/s/n/c/...），这里用同优先级 + !important
+ * 覆盖主题原来的 $code-highlight-color-map，颜色取自 github.com syntax theme。
+ * ================================================================ */
+
+/* ---- 浅色模式（GitHub Light） ---- */
+.single .content .highlight .hl {
+    background: transparent !important; /* 统一继承代码块背景 */
+}
+.single .content .highlight .ln,
+.single .content .highlight .lnt {
+    color: #6e7781 !important;     /* 行号颜色 */
+}
+
+/* 关键字 / Keyword */
+.single .content .highlight .k,
+.single .content .highlight .kd,
+.single .content .highlight .kn,
+.single .content .highlight .kp,
+.single .content .highlight .kr,
+.single .content .highlight .kt,
+.single .content .highlight .kc,
+.single .content .highlight .ow { color: #cf222e !important; }
+
+/* 字面量：字符串 */
+.single .content .highlight .s,
+.single .content .highlight .s1,
+.single .content .highlight .s2,
+.single .content .highlight .sb,
+.single .content .highlight .sc,
+.single .content .highlight .sd,
+.single .content .highlight .sh,
+.single .content .highlight .si,
+.single .content .highlight .sx,
+.single .content .highlight .sr,
+.single .content .highlight .ss,
+.single .content .highlight .sa,
+.single .content .highlight .dl,
+.single .content .highlight .se,
+.single .content .highlight .sd,
+.single .content .highlight .sh,
+.single .content .highlight .sx,
+.single .content .highlight .ss,
+.single .content .highlight .sa,
+.single .content .highlight .dl { color: #0a3069 !important; }
+
+/* 数字 */
+.single .content .highlight .m,
+.single .content .highlight .mf,
+.single .content .highlight .mi,
+.single .content .highlight .il,
+.single .content .highlight .mb,
+.single .content .highlight .mh,
+.single .content .highlight .mo { color: #0550ae !important; }
+
+/* 注释 */
+.single .content .highlight .c,
+.single .content .highlight .c1,
+.single .content .highlight .cm,
+.single .content .highlight .cs,
+.single .content .highlight .cp,
+.single .content .highlight .cpf,
+.single .content .highlight .ch { color: #6e7781 !important; font-style: italic !important; }
+
+/* 函数名、属性、变量、Name 系列 */
+.single .content .highlight .nf,
+.single .content .highlight .fm,
+.single .content .highlight .nb,
+.single .content .highlight .bp,
+.single .content .highlight .nc,
+.single .content .highlight .no,
+.single .content .highlight .nd,
+.single .content .highlight .ni,
+.single .content .highlight .ne,
+.single .content .highlight .nn,
+.single .content .highlight .nl,
+.single .content .highlight .py,
+.single .content .highlight .nt,
+.single .content .highlight .nv,
+.single .content .highlight .vc,
+.single .content .highlight .vg,
+.single .content .highlight .vi,
+.single .content .highlight .vm,
+.single .content .highlight .na { color: #8250df !important; }
+
+/* 常规标识符 Name（变量名、类名主体等，保持近黑色） */
+.single .content .highlight .n,
+.single .content .highlight .nx { color: #24292f !important; }
+
+/* 括号 */
+.single .content .highlight .p { color: #24292f !important; }
+
+/* 通用：删除/错误/加粗/标题等，用 GitHub 的红色 */
+.single .content .highlight .g,
+.single .content .highlight .gd,
+.single .content .highlight .ge,
+.single .content .highlight .gr,
+.single .content .highlight .gh,
+.single .content .highlight .gi,
+.single .content .highlight .go,
+.single .content .highlight .gp,
+.single .content .highlight .gs,
+.single .content .highlight .gu,
+.single .content .highlight .gt { color: #cf222e !important; }
+
+/* 普通空白 */
+.single .content .highlight .w { color: #6e7781 !important; }
+
+/* 行内 code 片段（行内 `code`，保留 GitHub 深色背景 + 圆角） */
+.single .content code:not(pre code),
+.content code:not(pre code),
+p code:not(pre code),
+li code:not(pre code) {
+    color: #24292f !important;
+    background: #f6f8fa !important;
+    border-radius: 6px !important;
+    padding: 0.2em 0.4em !important;
+}
+
+/* 兜底：让没有 class 的纯文本 code（bash 等）继承 GitHub 中性色，而不是主题红色 */
+.single .content code,
+.single .content pre code,
+.content code,
+pre code {
+    color: #24292f !important;
+}
+
+/* 代码块内 <code> 的背景和 display：让文本直接透出 .chroma 背景，消除"文本小盒子"色差 */
+.single .content .highlight code,
+.single .content .highlight pre code,
+.single .content pre code {
+    background: transparent !important;
+    display: inline !important;
+    padding: 0 !important;
+}
+
+[theme=dark] .single .content code,
+[theme=dark] .single .content pre code,
+[theme=dark] .content code,
+[theme=dark] pre code {
+    color: #c9d1d9 !important;
+}
+
+[theme=dark] .single .content .highlight code,
+[theme=dark] .single .content .highlight pre code,
+[theme=dark] .single .content pre code {
+    background: transparent !important;
+    display: inline !important;
+    padding: 0 !important;
+}
+
+/* 代码块整体背景微调：GitHub 的浅灰 */
+.single .content .highlight,
+.single .content .chroma,
+.single .content .highlight table {
+    background: #f6f8fa !important;
+}
+
+/* 代码块 header 继承父级背景，彻底杜绝 header 与主体之间的色差 */
+.single .content .highlight .chroma .code-header,
+.single .content .highlight .chroma .code-header .code-title {
+    background: inherit !important;
+}
+
+/* 代码字体：保留原等宽字体，中文显式回退到系统中文，确保和正文中文字体一致 */
+.single .content .highlight,
+.single .content code,
+.single .content pre code {
+    font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif !important;
+}
+
+/* ---- 深色模式（GitHub Dark） ---- */
+[theme=dark] .single .content .highlight .hl {
+    background: transparent !important;
+}
+[theme=dark] .single .content .highlight .ln,
+[theme=dark] .single .content .highlight .lnt {
+    color: #8b949e !important;
+}
+[theme=dark] .single .content .highlight,
+[theme=dark] .single .content .chroma,
+[theme=dark] .single .content .highlight table {
+    background: #181818 !important;
+}
+
+/* 深色模式下 header 也继承父级背景，和主体完全一致 */
+[theme=dark] .single .content .highlight .chroma .code-header,
+[theme=dark] .single .content .highlight .chroma .code-header .code-title {
+    background: inherit !important;
+}
+[theme=dark] .single .content .highlight .k,
+[theme=dark] .single .content .highlight .kd,
+[theme=dark] .single .content .highlight .kn,
+[theme=dark] .single .content .highlight .kp,
+[theme=dark] .single .content .highlight .kr,
+[theme=dark] .single .content .highlight .kt,
+[theme=dark] .single .content .highlight .kc,
+[theme=dark] .single .content .highlight .ow { color: #ff7b72 !important; }
+[theme=dark] .single .content .highlight .s,
+[theme=dark] .single .content .highlight .s1,
+[theme=dark] .single .content .highlight .s2,
+[theme=dark] .single .content .highlight .sb,
+[theme=dark] .single .content .highlight .sc,
+[theme=dark] .single .content .highlight .sd,
+[theme=dark] .single .content .highlight .sh,
+[theme=dark] .single .content .highlight .si,
+[theme=dark] .single .content .highlight .sx,
+[theme=dark] .single .content .highlight .sr,
+[theme=dark] .single .content .highlight .ss,
+[theme=dark] .single .content .highlight .sa,
+[theme=dark] .single .content .highlight .dl { color: #a5d6ff !important; }
+[theme=dark] .single .content .highlight .m,
+[theme=dark] .single .content .highlight .mf,
+[theme=dark] .single .content .highlight .mi,
+[theme=dark] .single .content .highlight .il,
+[theme=dark] .single .content .highlight .mb,
+[theme=dark] .single .content .highlight .mh,
+[theme=dark] .single .content .highlight .mo { color: #79c0ff !important; }
+[theme=dark] .single .content .highlight .c,
+[theme=dark] .single .content .highlight .c1,
+[theme=dark] .single .content .highlight .cm,
+[theme=dark] .single .content .highlight .cs,
+[theme=dark] .single .content .highlight .cp,
+[theme=dark] .single .content .highlight .cpf,
+[theme=dark] .single .content .highlight .ch { color: #8b949e !important; font-style: italic !important; }
+[theme=dark] .single .content .highlight .nf,
+[theme=dark] .single .content .highlight .fm,
+[theme=dark] .single .content .highlight .nb,
+[theme=dark] .single .content .highlight .bp,
+[theme=dark] .single .content .highlight .nc,
+[theme=dark] .single .content .highlight .no,
+[theme=dark] .single .content .highlight .nd,
+[theme=dark] .single .content .highlight .ni,
+[theme=dark] .single .content .highlight .ne,
+[theme=dark] .single .content .highlight .nn,
+[theme=dark] .single .content .highlight .nl,
+[theme=dark] .single .content .highlight .py,
+[theme=dark] .single .content .highlight .nt,
+[theme=dark] .single .content .highlight .nv,
+[theme=dark] .single .content .highlight .vc,
+[theme=dark] .single .content .highlight .vg,
+[theme=dark] .single .content .highlight .vi,
+[theme=dark] .single .content .highlight .vm,
+[theme=dark] .single .content .highlight .na { color: #d2a8ff !important; }
+[theme=dark] .single .content .highlight .n,
+[theme=dark] .single .content .highlight .nx { color: #c9d1d9 !important; }
+[theme=dark] .single .content .highlight .p { color: #c9d1d9 !important; }
+[theme=dark] .single .content .highlight .g,
+[theme=dark] .single .content .highlight .gd,
+[theme=dark] .single .content .highlight .ge,
+[theme=dark] .single .content .highlight .gr,
+[theme=dark] .single .content .highlight .gh,
+[theme=dark] .single .content .highlight .gi,
+[theme=dark] .single .content .highlight .go,
+[theme=dark] .single .content .highlight .gp,
+[theme=dark] .single .content .highlight .gs,
+[theme=dark] .single .content .highlight .gu,
+[theme=dark] .single .content .highlight .gt { color: #ff7b72 !important; }
+[theme=dark] .single .content .highlight .w { color: #8b949e !important; }
+
+[theme=dark] .single .content code:not(pre code),
+[theme=dark] .content code:not(pre code),
+[theme=dark] p code:not(pre code),
+[theme=dark] li code:not(pre code) {
+    color: #c9d1d9 !important;
+    background: #181818 !important;
+    border-radius: 6px !important;
+    padding: 0.2em 0.4em !important;
 }

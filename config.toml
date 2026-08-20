@@ -106,7 +106,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # LOGO 的 URL
       logo = ""
       # 首页左上角标题名称
-      name = "LEEYORKE"
+      name = "leeyorke"
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = ""
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
