@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>deepseek harness使用记录 - leeyorke的个人博客</title><meta name="Description" content="leeyorke的个人博客"><meta property="og:title" content="deepseek harness使用记录" />
+<meta property="og:description" content="本次记录两个对 deepseek harness 的修改： 把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。 支持在手机、iPad上也可以选择 workspace。 CHANGE 1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leeyorke.github.io/2026-08-22/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-08-22T10:50:20+08:00" />
+<meta property="article:modified_time" content="2026-08-22T10:50:20+08:00" /><meta property="og:site_name" content="leeyorke" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="deepseek harness使用记录"/>
+<meta name="twitter:description" content="本次记录两个对 deepseek harness 的修改： 把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。 支持在手机、iPad上也可以选择 workspace。 CHANGE 1"/>
+<meta name="application-name" content="leeyorke">
+<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/2026-08-22/" /><link rel="prev" href="https://leeyorke.github.io/2026-08-19/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "deepseek harness使用记录",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/leeyorke.github.io\/2026-08-22\/"
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "deepseek, AI","wordcount":  1081 ,
+        "url": "https:\/\/leeyorke.github.io\/2026-08-22\/","datePublished": "2026-08-22T10:50:20+08:00","dateModified": "2026-08-22T10:50:20+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "leeyorke"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="leeyorke的个人博客">leeyorke</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> posts </a><a class="menu-item" href="/tags/"> tags </a><a class="menu-item" href="/categories/"> categories </a><a class="menu-item" href="/about/"> about </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="leeyorke的个人博客">leeyorke</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">posts</a><a class="menu-item" href="/tags/" title="">tags</a><a class="menu-item" href="/categories/" title="">categories</a><a class="menu-item" href="/about/" title="">about</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">deepseek harness使用记录</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ai/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>AI</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-08-22">2026-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1081 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#change-1--多端访问">CHANGE 1 | 多端访问</a>
+      <ul>
+        <li><a href="#步骤">步骤</a></li>
+        <li><a href="#根因">根因</a></li>
+        <li><a href="#改动本地补丁2-个文件">改动(本地补丁，2 个文件)</a></li>
+        <li><a href="#你现在要做的">你现在要做的</a></li>
+        <li><a href="#两点提醒">两点提醒</a></li>
+      </ul>
+    </li>
+    <li><a href="#change-2--支持在手机ipad上也可以选择-workspace">CHANGE 2 | 支持在手机、iPad上也可以选择 workspace</a>
+      <ul>
+        <li><a href="#步骤-1">步骤</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本次记录两个对 deepseek harness 的修改：</p>
+<ul>
+<li>把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。</li>
+<li>支持在手机、iPad上也可以选择 workspace。</li>
+</ul>
+<h2 id="change-1--多端访问">CHANGE 1 | 多端访问</h2>
+<h3 id="步骤">步骤</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenaddress</span><span class="p">=</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">30</span><span class="p">.</span><span class="n">71</span> <span class="n">listenport</span><span class="p">=</span><span class="n">3080</span> <span class="n">connectaddress</span><span class="p">=</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span> <span class="n">connectport</span><span class="p">=</span><span class="n">3080</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">netsh</span> <span class="n">advfirewall</span> <span class="n">firewall</span> <span class="n">add</span> <span class="n">rule</span> <span class="n">name</span><span class="p">=</span><span class="s2">&#34;dsh-web-3080-lan&#34;</span> <span class="n">dir</span><span class="p">=</span><span class="k">in</span> <span class="n">action</span><span class="p">=</span><span class="n">allow</span> <span class="n">protocol</span><span class="p">=</span><span class="n">TCP</span> <span class="n">localport</span><span class="p">=</span><span class="n">3080</span> <span class="n">remoteip</span><span class="p">=</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">31</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">24</span>
+</span></span><span class="line"><span class="cl"><span class="n">确定</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">v4tov4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">侦听</span> <span class="n">ipv4</span><span class="err">:</span>                 <span class="n">连接到</span> <span class="n">ipv4</span><span class="err">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">地址</span>            <span class="n">端口</span>        <span class="n">地址</span>            <span class="n">端口</span>
+</span></span><span class="line"><span class="cl"><span class="p">---------------</span> <span class="p">----------</span>  <span class="p">---------------</span> <span class="p">----------</span>
+</span></span><span class="line"><span class="cl"><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>       <span class="n">8765</span>        <span class="n">172</span><span class="p">.</span><span class="n">17</span><span class="p">.</span><span class="n">237</span><span class="p">.</span><span class="n">150</span>  <span class="n">8765</span>
+</span></span><span class="line"><span class="cl"><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">30</span><span class="p">.</span><span class="n">71</span>   <span class="n">3080</span>        <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>       <span class="n">3080</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 重启</span>
+</span></span><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">pnpm</span> <span class="n">dsh</span> <span class="n">web</span> <span class="p">-</span><span class="n">-no-open</span> <span class="p">-</span><span class="n">-trusted-host</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">31</span><span class="p">.</span><span class="n">70</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果要删除规则，则：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">delete</span> <span class="n">v4tov4</span> <span class="n">listenaddress</span><span class="p">=</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">30</span><span class="p">.</span><span class="n">71</span> <span class="n">listenport</span><span class="p">=</span><span class="n">3080</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">➜</span> <span class="n">netsh</span> <span class="n">advfirewall</span> <span class="n">firewall</span> <span class="n">delete</span> <span class="n">rule</span> <span class="n">name</span><span class="p">=</span><span class="s2">&#34;dsh-web-3080-lan&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="根因">根因</h3>
+<p><code>crypto.randomUUID()</code> 是<strong>仅在安全上下文</strong>(HTTPS 或 localhost)下存在的浏览器 API。你从 <code>http://192.168.30.71:3080</code> 打开时它不存在，于是：</p>
+<ul>
+<li>浏览器端<strong>每一个 RPC 请求</strong>在铸造 rpcId 时就抛错(<code>AbstractApiClient.mintRpcId</code>)→ 拿不到任何数据，侧边栏空白——这才是之前“空”的真正原因，围栏和转发从头到尾都是好的；</li>
+<li>“添加工作区”只是你第一个撞上它的操作；</li>
+<li>附件草稿 id 也有一处同样的问题。</li>
+</ul>
+<h3 id="改动本地补丁2-个文件">改动(本地补丁，2 个文件)</h3>
+<ul>
+<li><code>packages/host/apiproxy/src/fetch/client.ts</code> — <code>mintRpcId</code> 增加 <code>getRandomValues</code> 兜底(有原生 <code>randomUUID</code> 时仍优先用)，与 connection 包既有的兜底实现同构；</li>
+<li><code>packages/client/ui-conversation/src/client/service.ts</code> — 草稿附件 id 同样处理。</li>
+</ul>
+<p>已执行 <code>pnpm run build:lib</code> 重建，并验证了<strong>运行中的服务实际下发的 bundle 字节</strong>里已经带上守卫+兜底代码(connection 和 ui-conversation 两条都确认)。服务端每次请求都从磁盘读 bundle 并按内容哈希做缓存击穿，所以<strong>不用重启 dsh,刷新页面即可生效</strong>。</p>
+<h3 id="你现在要做的">你现在要做的</h3>
+<p>iPad / 手机 / 电脑浏览器上刷新 <code>http://192.168.30.71:3080</code>(保险起见可以强制刷新)。这次工作区列表应该能直接列出来，点选 <code>deepseek-harness-master</code> 就能看到正在跑的任务；添加新工作区也不会再报红。</p>
+<h3 id="两点提醒">两点提醒</h3>
+<ol>
+<li>这是打在你本地 checkout 上的补丁，以后 <code>git pull</code> / 重置可能被冲掉。这是个真实的上游产品 bug(HTTP 局域网部署全坏)，值得给 deepseek-harness 提个 PR;</li>
+<li>普通 HTTP 下还可能有别的依赖安全上下文的 API(比如剪贴板写入)在某些操作上报错——遇到了把报错发我，同样的套路修。</li>
+</ol>
+<h2 id="change-2--支持在手机ipad上也可以选择-workspace">CHANGE 2 | 支持在手机、iPad上也可以选择 workspace</h2>
+<blockquote>
+<p>但我当前使用 <code>0.1.0-rc.8</code>， 这种还不够，因为通过 <code>http://192.168.30.71:3080</code> 访问，workspace要重新选，添加workspace直接报红：crypto.randomUUID is not a function，无法实现同步。所以就叫 deepseek harness 修复了这个问题。当前默认只能在电脑上选择 workspace 的目录，然后弹出文件资源管理器。</p>
+</blockquote>
+<h3 id="步骤-1">步骤</h3>
+<p>auto 包的注释说了：&ldquo;pinning an interaction remains composing that pair directly instead of this row&rdquo;——即：<strong>禁用 auto 行，直接插入一对新行</strong>(host 后端 + client 界面)。把 <code>~\.dsh\profiles\web\cordis.patch.yml</code> 整个改成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">directory-picker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">disabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">insert</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">directory-picker-browse-backend</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;@deepseek-ai/dsh-host-directory-picker-browse&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">directory-picker-browse-surface</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;@deepseek-ai/dsh-client-ui-directory-picker-browse&#39;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>用于钉死 browse 目录选择器。</p>
+<p>然后重启：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pnpm</span> <span class="n">dsh</span> <span class="n">web</span> <span class="p">-</span><span class="n">-no-open</span> <span class="p">-</span><span class="n">-trusted-host</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">30</span><span class="p">.</span><span class="n">71</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>现在在手机 / iPad 上刷新页面，点“添加工作区”——应该弹出 <strong>网页版目录浏览器</strong> ：默认是从 <code>~</code> 路径。可以随意选择。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-08-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2026-08-22/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://leeyorke.github.io/2026-08-22/" data-title="deepseek harness使用记录" data-hashtags="deepseek,AI"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://leeyorke.github.io/2026-08-22/" data-hashtag="deepseek"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://leeyorke.github.io/2026-08-22/" data-title="deepseek harness使用记录"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://leeyorke.github.io/2026-08-22/" data-title="deepseek harness使用记录"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://leeyorke.github.io/2026-08-22/" data-title="deepseek harness使用记录" data-ralateuid="u/"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/deepseek/">deepseek</a>,&nbsp;<a href="/tags/ai/">AI</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2026-08-19/" class="prev" rel="prev" title="我读如何超过大多数人"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>我读如何超过大多数人</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"leeyorke/leeyorke.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://plausible.io/js/plausible.js" async defer data-domain="leeyorke.github.io"></script>
+
+    </body>
+</html>

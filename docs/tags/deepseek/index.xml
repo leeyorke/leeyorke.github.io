@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>deepseek - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/deepseek/</link>
+        <description>deepseek - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/deepseek/" rel="self" type="application/rss+xml" /><item>
+    <title>deepseek harness使用记录</title>
+    <link>https://leeyorke.github.io/2026-08-22/</link>
+    <pubDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-22/</guid>
+    <description><![CDATA[本次记录两个对 deepseek harness 的修改： 把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。 支持在手机、iPad上也可以选择 workspace。 CHANGE 1]]></description>
+</item>
+</channel>
+</rss>

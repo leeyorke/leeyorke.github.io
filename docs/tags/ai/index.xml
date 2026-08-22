@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/ai/</link>
         <description>AI - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 24 Jun 2026 16:06:38 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+    <title>deepseek harness使用记录</title>
+    <link>https://leeyorke.github.io/2026-08-22/</link>
+    <pubDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-22/</guid>
+    <description><![CDATA[本次记录两个对 deepseek harness 的修改： 把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。 支持在手机、iPad上也可以选择 workspace。 CHANGE 1]]></description>
+</item>
+<item>
     <title>nanobot配置obsidian mcp server(V2)</title>
     <link>https://leeyorke.github.io/2026-06-24/</link>
     <pubDate>Wed, 24 Jun 2026 16:06:38 &#43;0800</pubDate>

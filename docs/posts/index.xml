@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/posts/</link>
         <description>所有文章 | leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Wed, 19 Aug 2026 14:21:21 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>deepseek harness使用记录</title>
+    <link>https://leeyorke.github.io/2026-08-22/</link>
+    <pubDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-22/</guid>
+    <description><![CDATA[本次记录两个对 deepseek harness 的修改： 把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。 支持在手机、iPad上也可以选择 workspace。 CHANGE 1]]></description>
+</item>
+<item>
     <title>我读如何超过大多数人</title>
     <link>https://leeyorke.github.io/2026-08-19/</link>
     <pubDate>Wed, 19 Aug 2026 14:21:21 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2026-04-08/</guid>
     <description><![CDATA[claude 命令无法使用 1 2 3 ➜ claude -c claude: The term &#39;claude&#39; is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. npm list -g 也不见 @anthropic-]]></description>
-</item>
-<item>
-    <title>用5W3H解释clarify技能有什么用</title>
-    <link>https://leeyorke.github.io/2026-04-07/</link>
-    <pubDate>Tue, 07 Apr 2026 10:20:47 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2026-04-07/</guid>
-    <description><![CDATA[what 是什么？ clarify-skill 是一个命题分解与决策澄清系统。工作原理如下： 外层 · 维特根斯坦（扫描） → 发现哪里模糊，把复合表述拆成原子单元 中层 · 苏格拉底（挖掘）]]></description>
 </item>
 </channel>
 </rss>
