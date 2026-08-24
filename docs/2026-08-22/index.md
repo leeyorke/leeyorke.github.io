@@ -87,3 +87,18 @@ pnpm dsh web --no-open --trusted-host 192.168.30.71
 ```
 
 现在在手机 / iPad 上刷新页面，点“添加工作区”——应该弹出 **网页版目录浏览器** ：默认是从 `~` 路径。可以随意选择。
+
+
+## CHANGE 3 | 多端访问V2
+
+之前是自己改代码加规则，现在直接装个插件 [dsh-proxy](https://github.com/smanx/dsh-proxy), 命令:
+
+```powershell
+dsh plugin --profile web add github:smanx/dsh-proxy#master
+```
+
+然后如果你是局域网的话，添加防火墙规则：
+
+```powershell
+➜ netsh advfirewall firewall add rule name="dsh-web-3080-lan" dir=in action=allow protocol=TCP localport=3081 remoteip=192.168.31.0/24
+```
