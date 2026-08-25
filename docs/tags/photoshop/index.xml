@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>PhotoShop - 标签 - leeyorke的个人博客</title>
+        <link>https://leeyorke.github.io/tags/photoshop/</link>
+        <description>PhotoShop - 标签 - leeyorke的个人博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/photoshop/" rel="self" type="application/rss+xml" /><item>
+    <title>PhotoShop CS6之制作圆角图片</title>
+    <link>https://leeyorke.github.io/2026-08-25/</link>
+    <pubDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-25/</guid>
+    <description><![CDATA[流程： 打开图片。 双击右侧锁子，添加一个新图层0。 找到「圆角矩形工具」，随便画一个圆角矩形。 按 v 键，拖动路径调整位置。 按 ctrl+T，拖动路径]]></description>
+</item>
+</channel>
+</rss>

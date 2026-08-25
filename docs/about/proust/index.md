@@ -1,7 +1,7 @@
 # 普鲁斯特问卷｜人生35问
 
 
-01 What is your idea of perfect happiness ?
+### 01 What is your idea of perfect happiness ?
 
 你认为最完美的幸福是怎样的？
 
@@ -9,8 +9,7 @@
 
 *`包容性的社会，尊重子女但懂得追求自身幸福的父母，勇敢并为理想奋不顾身的我。`* -- 2025
 
-
-02 What is your greatest fear ?
+### 02 What is your greatest fear ?
 
 你最大的恐惧是什么？
 
@@ -20,7 +19,7 @@
 
 
 
-03 What is the trait you most deplore in yourself ?
+### 03 What is the trait you most deplore in yourself ?
 
 你最痛恨自己的哪些特质？
 
@@ -33,7 +32,7 @@
 
 
 
-04 What is the trait you most deplore in others ?
+### 04 What is the trait you most deplore in others ?
 
 你最痛恨别人的什么特点？
 
@@ -45,7 +44,7 @@
 
 
 
-05 Which living person do you most admire ?
+### 05 Which living person do you most admire ?
 
 还在世的人中你最欣赏的是谁？
 
@@ -57,7 +56,7 @@
 
 
 
-06 What is your greatest extravagance ?
+### 06 What is your greatest extravagance ?
 
 你最大的奢侈品是什么？
 
@@ -68,7 +67,7 @@
 
 
 
-07 What is your current state of mind ?
+### 07 What is your current state of mind ?
 
 你目前的心境怎样？
 
@@ -80,7 +79,7 @@
 
 
 
-08 What do you consider the most overrated virtue ?
+### 08 What do you consider the most overrated virtue ?
 
 你认为哪种美德是被过高评价的？
 
@@ -92,7 +91,7 @@
 
 
 
-09 On what occasion do you lie ?
+### 09 On what occasion do you lie ?
 
 什么情况下你会撒谎？
 
@@ -102,7 +101,7 @@
 
 
 
-10 What do you most dislike about your appearance ?
+### 10 What do you most dislike about your appearance ?
 
 你对自己的外表哪一点不满意？
 
@@ -112,7 +111,7 @@
 
 
 
-11 Which living person do you most despise ?
+### 11 Which living person do you most despise ?
 
 还在世的人中你最鄙视谁？
 
@@ -122,7 +121,7 @@
 
 
 
-12 What is the quality you most like in a man ?
+### 12 What is the quality you most like in a man ?
 
 你最喜欢男性身上的什么品质？
 
@@ -132,7 +131,7 @@
 
 
 
-13 What is the quality you most like in a woman ?
+### 13 What is the quality you most like in a woman ?
 
 你最喜欢女性身上的什么品质？
 
@@ -142,7 +141,7 @@
 
 
 
-14 Which words or phrases do you most overuse ?
+### 14 Which words or phrases do you most overuse ?
 
 你最常使用的单词或短语是什么？
 
@@ -152,7 +151,7 @@
 
 
 
-15 What or who is the greatest love of your life ?
+### 15 What or who is the greatest love of your life ?
 
 你这一生中最伟大的爱是谁/什么？
 
@@ -163,7 +162,7 @@
 
 
 
-16 When and where were you happiest ?
+### 16 When and where were you happiest ?
 
 何时何地让你感觉到最快乐？
 
@@ -176,7 +175,7 @@
 
 
 
-17 Which talent would you most like to have ?
+### 17 Which talent would you most like to have ?
 
 你最想拥有哪种才能？
 
@@ -191,7 +190,7 @@
 
 
 
-18 If you could change one thing about yourself, what would it be ?
+### 18 If you could change one thing about yourself, what would it be ?
 
 如果你能够改变自己的一件事，那会是什么？
 
@@ -201,7 +200,7 @@
 
 
 
-19 What do you consider your greatest achievement ?
+### 19 What do you consider your greatest achievement ?
 
 你认为自己最大的成就是什么？
 
@@ -211,7 +210,7 @@
 
 
 
-20 If you were to die and come back as a person or a thing, what would it be ?
+### 20 If you were to die and come back as a person or a thing, what would it be ?
 
 如果有转世，你希望成为什么样的人或物？
 
@@ -221,7 +220,7 @@
 
 
 
-21 Where would you most like to live ?
+### 21 Where would you most like to live ?
 
 你最想住在哪里？
 
@@ -231,7 +230,7 @@
 
 
 
-22 What is your most treasured possession ?
+### 22 What is your most treasured possession ?
 
 你最珍贵的财产是什么？
 
@@ -240,7 +239,7 @@
 
 
 
-23 What do you regard as the lowest depth of misery ?
+### 23 What do you regard as the lowest depth of misery ?
 
 你认为程度最浅的痛苦是什么？
 
@@ -250,7 +249,7 @@
 
 
 
-24 What is your favorite occupation ?
+### 24 What is your favorite occupation ?
 
 你最喜欢的职业是什么？
 
@@ -260,7 +259,7 @@
 
 
 
-25 What is your most marked characteristic ?
+### 25 What is your most marked characteristic ?
 
 你最显著的特点是什么？
 
@@ -269,7 +268,7 @@
 
 
 
-26 What do you most value in your friends ?
+### 26 What do you most value in your friends ?
 
 你最看重朋友的什么特点？
 
@@ -279,7 +278,7 @@
 
 
 
-27 Who are your favorite writers ?
+### 27 Who are your favorite writers ?
 
 你最喜欢的作家是谁？
 
@@ -287,7 +286,7 @@
 
 
 
-28 Who is your hero of fiction ?
+### 28 Who is your hero of fiction ?
 
  谁是你心目中小说里的英雄？
 
@@ -297,7 +296,7 @@
 
 
 
-29 Which historical figure do you most identify with ?
+### 29 Which historical figure do you most identify with ?
 
 你最认同哪位历史人物？
 
@@ -307,7 +306,7 @@
 
 
 
-30 Who are your heroes in real life ?
+### 30 Who are your heroes in real life ?
 
 谁是你现实生活中的英雄？
 
@@ -317,7 +316,7 @@
 
 
 
-31 What are your favorite names ?
+### 31 What are your favorite names ?
 
 你最喜欢的名字是什么？
 
@@ -327,7 +326,7 @@
 
 
 
-32 What is it that you most dislike ?
+### 32 What is it that you most dislike ?
 
 你最不喜欢什么？
 
@@ -337,7 +336,7 @@
 
 
 
-33 What is your greatest regret ?
+### 33 What is your greatest regret ?
 
 你最大的遗憾是什么？
 
@@ -347,7 +346,7 @@
 
 
 
-34 How would you like to die ?
+### 34 How would you like to die ?
 
 你想以何种方式死去？
 
@@ -357,7 +356,7 @@
 
 
 
-35 What is your motto ?
+### 35 What is your motto ?
 
 你的座右铭是什么？
 

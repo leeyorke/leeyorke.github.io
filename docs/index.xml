@@ -4,9 +4,25 @@
         <link>https://leeyorke.github.io/</link>
         <description>leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</lastBuildDate>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</lastBuildDate>
             <atom:link href="https://leeyorke.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>PhotoShop CS6之制作圆角图片</title>
+    <link>https://leeyorke.github.io/2026-08-25/</link>
+    <pubDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-25/</guid>
+    <description><![CDATA[流程： 打开图片。 双击右侧锁子，添加一个新图层0。 找到「圆角矩形工具」，随便画一个圆角矩形。 按 v 键，拖动路径调整位置。 按 ctrl+T，拖动路径]]></description>
+</item>
+<item>
+    <title>调试九法:软硬件错误的排查之道-阅读笔记</title>
+    <link>https://leeyorke.github.io/2026-08-23/</link>
+    <pubDate>Sun, 23 Aug 2026 11:11:22 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-23/</guid>
+    <description><![CDATA[Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems 中译本翻译为：调试九法:软硬件错误的排查之道，译者：赵俐 图1：调试九法 法则一 | 理解系统 01 阅读手册 阅读手册。（即]]></description>
+</item>
+<item>
     <title>deepseek harness使用记录</title>
     <link>https://leeyorke.github.io/2026-08-22/</link>
     <pubDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</pubDate>
@@ -69,22 +85,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2026-04-15/</guid>
     <description><![CDATA[今天早上我问了AI一个问题。 1 今天这个 Agent 火了，明天那个 Agent 火了，那么永恒不变的是什么? 去年 openclaw 横空出世，让人们见识了真正的聊天机器人是什么样。后]]></description>
-</item>
-<item>
-    <title>在 claude code 中为 MiniMax 模型设置 statusline</title>
-    <link>https://leeyorke.github.io/2026-04-11/</link>
-    <pubDate>Sat, 11 Apr 2026 22:19:20 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2026-04-11/</guid>
-    <description><![CDATA[安装Jq 1 which jq || sudo apt install jq 编写脚本 路径 ~/.claude/statusline-command.sh 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51]]></description>
-</item>
-<item>
-    <title>claude相关配置问题</title>
-    <link>https://leeyorke.github.io/2026-04-08/</link>
-    <pubDate>Wed, 08 Apr 2026 17:16:50 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2026-04-08/</guid>
-    <description><![CDATA[claude 命令无法使用 1 2 3 ➜ claude -c claude: The term &#39;claude&#39; is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again. npm list -g 也不见 @anthropic-]]></description>
 </item>
 </channel>
 </rss>

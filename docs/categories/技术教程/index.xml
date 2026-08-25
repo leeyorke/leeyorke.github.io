@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</link>
         <description>技术教程 - 分类 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Fri, 03 Jul 2026 21:15:14 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>PhotoShop CS6之制作圆角图片</title>
+    <link>https://leeyorke.github.io/2026-08-25/</link>
+    <pubDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-25/</guid>
+    <description><![CDATA[流程： 打开图片。 双击右侧锁子，添加一个新图层0。 找到「圆角矩形工具」，随便画一个圆角矩形。 按 v 键，拖动路径调整位置。 按 ctrl+T，拖动路径]]></description>
+</item>
+<item>
     <title>安卓网易云老版本</title>
     <link>https://leeyorke.github.io/2026-07-03/</link>
     <pubDate>Fri, 03 Jul 2026 21:15:14 &#43;0800</pubDate>

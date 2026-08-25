@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>调试九法:软硬件错误的排查之道-阅读笔记 - leeyorke的个人博客</title><meta name="Description" content="leeyorke的个人博客"><meta property="og:title" content="调试九法:软硬件错误的排查之道-阅读笔记" />
+<meta property="og:description" content="Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems 中译本翻译为：调试九法:软硬件错误的排查之道，译者：赵俐 图1：调试九法 法则一 | 理解系统 01 阅读手册 阅读手册。（即" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leeyorke.github.io/2026-08-23/" /><meta property="og:image" content="https://leeyorke.github.io/images/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-08-23T11:11:22+08:00" />
+<meta property="article:modified_time" content="2026-08-23T11:11:22+08:00" /><meta property="og:site_name" content="leeyorke" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leeyorke.github.io/images/logo.png"/>
+
+<meta name="twitter:title" content="调试九法:软硬件错误的排查之道-阅读笔记"/>
+<meta name="twitter:description" content="Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems 中译本翻译为：调试九法:软硬件错误的排查之道，译者：赵俐 图1：调试九法 法则一 | 理解系统 01 阅读手册 阅读手册。（即"/>
+<meta name="application-name" content="leeyorke">
+<meta name="apple-mobile-web-app-title" content="leeyorke"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://leeyorke.github.io/2026-08-23/" /><link rel="prev" href="https://leeyorke.github.io/2026-08-22/" /><link rel="next" href="https://leeyorke.github.io/2026-08-25/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "调试九法:软硬件错误的排查之道-阅读笔记",
+        "inLanguage": "zh-cn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/leeyorke.github.io\/2026-08-23\/"
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "deepseek, AI","wordcount":  721 ,
+        "url": "https:\/\/leeyorke.github.io\/2026-08-23\/","datePublished": "2026-08-23T11:11:22+08:00","dateModified": "2026-08-23T11:11:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "leeyorke"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="leeyorke的个人博客">leeyorke</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> posts </a><a class="menu-item" href="/tags/"> tags </a><a class="menu-item" href="/categories/"> categories </a><a class="menu-item" href="/about/"> about </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="leeyorke的个人博客">leeyorke</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">posts</a><a class="menu-item" href="/tags/" title="">tags</a><a class="menu-item" href="/categories/" title="">categories</a><a class="menu-item" href="/about/" title="">about</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">调试九法:软硬件错误的排查之道-阅读笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E9%9A%8F%E7%AC%94/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>随笔</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-08-23">2026-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 721 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#法则一--理解系统">法则一 | 理解系统</a>
+      <ul>
+        <li><a href="#01-阅读手册">01 阅读手册</a></li>
+        <li><a href="#02-逐字逐句阅读整个手册">02 逐字逐句阅读整个手册</a></li>
+        <li><a href="#03-知道什么是正常的">03 知道什么是正常的</a></li>
+        <li><a href="#04-知道工作流程">04 知道工作流程</a></li>
+        <li><a href="#05-了解你的工具">05 了解你的工具</a></li>
+        <li><a href="#06-查阅手册">06 查阅手册</a></li>
+      </ul>
+    </li>
+    <li><a href="#法则二--制造失败">法则二 | 制造失败</a></li>
+    <li><a href="#收集--比较有意思的主题概念">收集 | 比较有意思的主题概念</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems
+中译本翻译为：调试九法:软硬件错误的排查之道，译者：赵俐</p>
+<div style="display: flex; gap: 10px; justify-content: center; align-items: flex-start; margin: 15px;">
+  <figure style="flex: 1; text-align: center; margin: 0;">
+    <img src="images/debuggging-rules.png" style="width: 100%;">
+    <figcaption>图1：调试九法</figcaption>
+  </figure>
+</div>
+<h2 id="法则一--理解系统">法则一 | 理解系统</h2>
+<h3 id="01-阅读手册">01 阅读手册</h3>
+<ol>
+<li>阅读手册。（即使手册也可能出错）</li>
+<li>阅读代码/代码注释。</li>
+</ol>
+<h3 id="02-逐字逐句阅读整个手册">02 逐字逐句阅读整个手册</h3>
+<ol>
+<li>手册会提供丰富的信息及前人的经验。</li>
+<li>手册也会又不合理的地方，不合理的地方往往就是最容易出问题的地方。</li>
+</ol>
+<h3 id="03-知道什么是正常的">03 知道什么是正常的</h3>
+<blockquote>
+<p>这里有点感想，以前我写不出来自动化测试框架，就是自己的 context 太小，知道的太少
+比如我不知道模板替换的库。不知道 inspect、不知道 hasattr、getattr、不知道 importlib
+我就不可能知道怎么做，所以设计不出框架，要是从头来，自己需要学好多好多东西。知识储备
+是非常重要的，这里理解整个系统是非常重要的。</p>
+</blockquote>
+<p>这里作者想表达的意思是必须具备一些<strong>基础知识</strong>，基础知识不懂，你就不会知道什么是不正常，
+什么是错误，也就无法发现问题。</p>
+<blockquote>
+<p>比如我刚开始进入公司时，测试视频彩条图像，我不知道怎么测，其实是我不知道什么是正常的
+什么是不正常</p>
+</blockquote>
+<h3 id="04-知道工作流程">04 知道工作流程</h3>
+<p>了解系统的工作流程才能知道 BUG 的排查路线。</p>
+<h3 id="05-了解你的工具">05 了解你的工具</h3>
+<p>辅助你排查错误的调试工具你必须了解。</p>
+<h3 id="06-查阅手册">06 查阅手册</h3>
+<p>养成良好的查阅手册的习惯，注意细节，不要相信自己的记忆和靠猜测行事。</p>
+<h2 id="法则二--制造失败">法则二 | 制造失败</h2>
+<blockquote>
+<p>在软件测试中也就是复现bug，复现 BUG 也要有一些技巧，作者给出了以下方法</p>
+</blockquote>
+<h2 id="收集--比较有意思的主题概念">收集 | 比较有意思的主题概念</h2>
+<ol>
+<li><strong>拇指规则</strong>。英文为 <strong>rule of thumb</strong>，又译为 了「大拇指规则」或 「经验法则」，是一种可用于许多情况的简单的经验性的原则。来源于作者在面试时喜欢问：你喜欢在调试时用什么拇指规则。而本书正是把这些“明显的”规则收集到一起，帮助读者记住他们。</li>
+<li><strong>墨菲定律</strong>。Murphy&rsquo;s Law，事情如果有变坏的可能，不管这种可能性有多小，它总会发生</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2026-08-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2026-08-23/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://leeyorke.github.io/2026-08-23/" data-title="调试九法:软硬件错误的排查之道-阅读笔记" data-hashtags="deepseek,AI"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://leeyorke.github.io/2026-08-23/" data-hashtag="deepseek"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://leeyorke.github.io/2026-08-23/" data-title="调试九法:软硬件错误的排查之道-阅读笔记"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://leeyorke.github.io/2026-08-23/" data-title="调试九法:软硬件错误的排查之道-阅读笔记"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://leeyorke.github.io/2026-08-23/" data-title="调试九法:软硬件错误的排查之道-阅读笔记" data-ralateuid="u/"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/deepseek/">deepseek</a>,&nbsp;<a href="/tags/ai/">AI</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2026-08-22/" class="prev" rel="prev" title="deepseek harness使用记录"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>deepseek harness使用记录</a>
+            <a href="/2026-08-25/" class="next" rel="next" title="PhotoShop CS6之制作圆角图片">PhotoShop CS6之制作圆角图片<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://leeyorke.github.io" target="_blank">leeyorke</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"leeyorke/leeyorke.github.io"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://plausible.io/js/plausible.js" async defer data-domain="leeyorke.github.io"></script>
+
+    </body>
+</html>

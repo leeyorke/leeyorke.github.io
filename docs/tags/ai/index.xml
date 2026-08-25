@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/tags/ai/</link>
         <description>AI - 标签 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 23 Aug 2026 11:11:22 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+    <title>调试九法:软硬件错误的排查之道-阅读笔记</title>
+    <link>https://leeyorke.github.io/2026-08-23/</link>
+    <pubDate>Sun, 23 Aug 2026 11:11:22 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-08-23/</guid>
+    <description><![CDATA[Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems 中译本翻译为：调试九法:软硬件错误的排查之道，译者：赵俐 图1：调试九法 法则一 | 理解系统 01 阅读手册 阅读手册。（即]]></description>
+</item>
+<item>
     <title>deepseek harness使用记录</title>
     <link>https://leeyorke.github.io/2026-08-22/</link>
     <pubDate>Sat, 22 Aug 2026 10:50:20 &#43;0800</pubDate>
