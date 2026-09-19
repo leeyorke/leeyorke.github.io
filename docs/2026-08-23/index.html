@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leeyorke.github.io\/2026-08-23\/"
-        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "deepseek, AI","wordcount":  721 ,
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "deepseek, AI","wordcount":  847 ,
         "url": "https:\/\/leeyorke.github.io\/2026-08-23\/","datePublished": "2026-08-23T11:11:22+08:00","dateModified": "2026-08-25T11:44:47+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -102,7 +102,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">调试九法:软硬件错误的排查之道-阅读笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E9%9A%8F%E7%AC%94/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>随笔</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-08-23">2026-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 721 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-08-23">2026-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 847 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -121,7 +121,13 @@
         <li><a href="#06-查阅手册">06 查阅手册</a></li>
       </ul>
     </li>
-    <li><a href="#法则二--制造失败">法则二 | 制造失败</a></li>
+    <li><a href="#法则二--制造失败">法则二 | 制造失败</a>
+      <ul>
+        <li><a href="#01-发现错误后必须能够使它再现">01 发现错误后，必须能够使它再现</a></li>
+        <li><a href="#02-注意错误发生时的状态">02 注意错误发生时的状态</a></li>
+        <li><a href="#heading"></a></li>
+      </ul>
+    </li>
     <li><a href="#收集--比较有意思的主题概念">收集 | 比较有意思的主题概念</a></li>
   </ul>
 </nav></div>
@@ -167,6 +173,11 @@
 <blockquote>
 <p>在软件测试中也就是复现bug，复现 BUG 也要有一些技巧，作者给出了以下方法</p>
 </blockquote>
+<h3 id="01-发现错误后必须能够使它再现">01 发现错误后，必须能够使它再现</h3>
+<p>发现错误后，仔细回顾你做了什么，然后再按照刚才的步骤做一次，记录你的每个步骤，然后按照记录的步骤去做，确保该步骤能够稳定复现错误</p>
+<h3 id="02-注意错误发生时的状态">02 注意错误发生时的状态</h3>
+<p>bug 可能在某个复杂状态时才会出现，所以必须注意在执行每个步骤时系统的状态。</p>
+<h3 id="heading"></h3>
 <h2 id="收集--比较有意思的主题概念">收集 | 比较有意思的主题概念</h2>
 <ol>
 <li><strong>拇指规则</strong>。英文为 <strong>rule of thumb</strong>，又译为 了「大拇指规则」或 「经验法则」，是一种可用于许多情况的简单的经验性的原则。来源于作者在面试时喜欢问：你喜欢在调试时用什么拇指规则。而本书正是把这些“明显的”规则收集到一起，帮助读者记住他们。</li>

@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leeyorke.github.io\/2026-03-31\/"
-        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "github, ssh","wordcount":  196 ,
+        },"image": ["https:\/\/leeyorke.github.io\/static\/favicon.svg"],"genre": "posts","keywords": "github, ssh","wordcount":  929 ,
         "url": "https:\/\/leeyorke.github.io\/2026-03-31\/","datePublished": "2026-03-31T22:32:11+08:00","dateModified": "2026-03-31T22:48:11+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -102,8 +102,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">github ssh clone 慢的解决方案</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="http://leeyorke.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>leeyorke</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-31">2026-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 196 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-31">2026-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 929 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -114,6 +114,18 @@
     <li><a href="#01-配置-sshconfig文件">01 配置 ~/.ssh/config文件</a></li>
     <li><a href="#开启终端代理">开启终端代理</a></li>
     <li><a href="#clash加规则">clash加规则</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#方法一使用-connectexe最常用">方法一：使用 <code>connect.exe</code>（最常用）</a></li>
+        <li><a href="#方法二使用-nmap-的-ncat更推荐功能更完整">方法二：使用 Nmap 的 <code>ncat</code>（更推荐，功能更完整）</a></li>
+        <li><a href="#测试">测试</a></li>
+        <li><a href="#nmap-的安装界面组件说明">Nmap 的安装界面组件说明</a></li>
+        <li><a href="#针对ssh-走代理">针对SSH 走代理</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>以下记录在 windows 上配置过程。</p>
@@ -168,7 +180,154 @@
 <pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&#34;AND,(DOMAIN-SUFFIX,github.com),(DST-PORT,22),节点选择&#34;
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><hr>
+<h1 id="2026-09-03">2026-09-03</h1>
+<p>上面的方法好像有点问题，改为以下方式：</p>
+<h3 id="方法一使用-connectexe最常用">方法一：使用 <code>connect.exe</code>（最常用）</h3>
+<ol>
+<li>
+<p>下载 <code>connect.exe</code>（推荐从这里获取：
+<a href="https://github.com/gotoh/connect" target="_blank" rel="noopener noreffer ">https://github.com/gotoh/connect</a> 或搜索 “connect.exe windows”）</p>
+</li>
+<li>
+<p>把 <code>connect.exe</code> 放到系统 PATH 里（比如放到 <code>C:\Windows</code> 或 Git 的 <code>bin</code> 目录下）。</p>
+</li>
+<li>
+<p>修改 <code>C:\Users\你的用户名\.ssh\config</code> 为：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host github.com
+</span></span><span class="line"><span class="cl">  HostName ssh.github.com
+</span></span><span class="line"><span class="cl">  User git
+</span></span><span class="line"><span class="cl">  Port 443
+</span></span><span class="line"><span class="cl">  IdentityFile ~/.ssh/id_ed25519
+</span></span><span class="line"><span class="cl">  ServerAliveInterval 10
+</span></span><span class="line"><span class="cl">  ServerAliveCountMax 10
+</span></span><span class="line"><span class="cl">  ProxyCommand connect -S 127.0.0.1:7897 %h %p
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>小提示：</strong></p>
+<ul>
+<li>Windows 的 SSH 配置文件路径是：<code>C:\Users\你的用户名\.ssh\config</code></li>
+<li>如果用的是 <strong>Git for Windows</strong>，也可以尝试把 <code>connect.exe</code> 放到 <code>C:\Program Files\Git\mingw64\bin\</code> 目录下。</li>
+<li>确保你的代理软件（Clash / V2RayN 等）已经开启，并且 <strong>允许局域网连接</strong>（Allow LAN）。</li>
+</ul>
+<h3 id="方法二使用-nmap-的-ncat更推荐功能更完整">方法二：使用 Nmap 的 <code>ncat</code>（更推荐，功能更完整）</h3>
+<blockquote>
+<p>本次使用该方式</p>
+</blockquote>
+<ol>
+<li>安装 <a href="https://nmap.org/download.html" target="_blank" rel="noopener noreffer ">Nmap</a>（安装时勾选 Ncat）。</li>
+<li>配置写成：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host github.com
+</span></span><span class="line"><span class="cl">  HostName ssh.github.com
+</span></span><span class="line"><span class="cl">  User git
+</span></span><span class="line"><span class="cl">  Port 443
+</span></span><span class="line"><span class="cl">  IdentityFile ~/.ssh/id_ed25519
+</span></span><span class="line"><span class="cl">  ServerAliveInterval 10
+</span></span><span class="line"><span class="cl">  ServerAliveCountMax 10
+</span></span><span class="line"><span class="cl">  ProxyCommand &#34;C:\Program Files (x86)\Nmap\ncat.exe&#34; --proxy-type socks5 --proxy 127.0.0.1:7897 %h %p
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>路径根据实际安装位置调整</strong></p>
+<h3 id="测试">测试</h3>
+<p>打开 PowerShell 或 CMD，执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -T git@github.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果看到 <code>Hi xxx! You've successfully authenticated...</code> 就说明代理生效了。</p>
+<h3 id="nmap-的安装界面组件说明">Nmap 的安装界面组件说明</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>含义</th>
+<th>是否需要勾选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nmap Core Files</strong></td>
+<td>Nmap 的核心程序（扫描工具本身）</td>
+<td><strong>必须勾选</strong></td>
+</tr>
+<tr>
+<td><strong>Register Nmap Path</strong></td>
+<td>把 Nmap 相关命令加入系统 PATH，方便在命令行直接使用</td>
+<td><strong>强烈建议勾选</strong></td>
+</tr>
+<tr>
+<td><strong>Npcap 1.88</strong></td>
+<td>Windows 上抓包驱动，Nmap 扫描时需要用到</td>
+<td>建议勾选（装了也没事）</td>
+</tr>
+<tr>
+<td><strong>Check online for newer versions</strong></td>
+<td>安装时检查是否有新版本</td>
+<td>可不勾选</td>
+</tr>
+<tr>
+<td><strong>Network Performance</strong></td>
+<td>网络性能相关组件</td>
+<td>可勾选</td>
+</tr>
+<tr>
+<td><strong>Ncat (Modern Netcat)</strong></td>
+<td><strong>现代版 netcat</strong>，这就是我们要用的 <code>ncat</code> 命令</td>
+<td><strong>必须勾选</strong>（最重要）</td>
+</tr>
+<tr>
+<td><strong>Nping (Packet generator)</strong></td>
+<td>发包测试工具</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><strong>Zenmap (GUI Frontend)</strong></td>
+<td>Nmap 的图形界面</td>
+<td>可选（不需要可以取消）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="针对ssh-走代理">针对SSH 走代理</h3>
+<p>只需要用到 <strong>Ncat</strong>，所以最少只需要勾选这几个：</p>
+<ul>
+<li>✅ <strong>Nmap Core Files</strong></li>
+<li>✅ <strong>Register Nmap Path</strong>（很重要，勾了之后才能直接在命令行用 <code>ncat</code>）</li>
+<li>✅ <strong>Ncat (Modern Netcat)</strong> ← 这个是核心</li>
+</ul>
+<p>其他的（Npcap、Nping、Zenmap）都可以不勾，能省一点空间和时间。</p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
