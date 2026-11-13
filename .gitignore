@@ -1,1 +1,3 @@
 .github-token
+# playwright-cli 本地调试产物（截图/console log），不入库
+.playwright-cli/

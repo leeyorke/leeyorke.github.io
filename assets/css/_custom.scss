@@ -12,6 +12,15 @@
     font-display: block;
 }
 
+/* BBC Reith Sans 正文字体 */
+@font-face {
+    font-family: 'BBC Reith Sans';
+    src: url('/fonts/BBCReithSans_Rg.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --toc-font-size: 14px;          /* 统一控制目录字号 */
     --toc-weight-normal: 300;      /* 未激活时的字重（常规） */
@@ -27,7 +36,51 @@
 }
 
 html {
-    line-height: 2 !important;
+    line-height: 3 !important;
+}
+
+/* 页面背景色：温暖米白（仅浅色模式；深色模式在下方单独还原深色） */
+body {
+    background-color: #fffcf0 !important;
+}
+body[theme=dark] {
+    background-color: #292a2d !important;   /* 深色模式还原主题深色背景 */
+}
+
+/* Header 背景色：与米白背景协调的暖色（主题默认是 #f8f8f8 冷灰） */
+#header-desktop {
+    background-color: #fbf7e8 !important;
+}
+[theme=dark] #header-desktop {
+    background-color: #252627 !important;   /* 深色模式保持主题默认深色 */
+}
+
+/* ================================================================
+   Header 与正文/目录对齐
+   ----------------------------------------------------------------
+   目标：左上角标题的「最左侧」与正文区域「最左侧」垂直对齐；
+        顶部菜单的「最右侧」与右侧目录的「最右侧」垂直对齐。
+   正文左边缘 = .container 的 padding(1rem) + .page 的 margin-left
+              = calc(1rem + <margin-left>)。
+   下面按各断点的 .page margin-left 给 header-wrapper 配对应的 padding-left，
+   并把 padding-right 固定为 14rem（与 #toc-auto 的 right:14rem 一致，
+   使菜单右边缘与目录右边缘对齐）。
+   注意：.header-wrapper 原为 padding: 0 2rem 0 10vh，这里覆盖之。
+   ================================================================ */
+#header-desktop .header-wrapper {
+    box-sizing: border-box;
+    padding-right: 14rem !important;             /* 与目录 right:14rem 对齐 */
+    padding-left: calc(1rem + 16%) !important;    /* 基准断点，对应 .page margin-left:16% */
+}
+@media only screen and (max-width: 1440px) {
+    #header-desktop .header-wrapper {
+        padding-left: calc(1rem + 8%) !important;  /* 对应 margin-left:8% */
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #header-desktop .header-wrapper {
+        padding-left: calc(1rem + 6%) !important;  /* 对应 margin-left:6% */
+    }
 }
 
 /* 字体配置 */
@@ -36,7 +89,7 @@ body, .wrapper {
     // font-weight: 300 !important;
     // font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji" !important;
     // font-family: serif !important;
-    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro !important;
+    font-family: 'BBC Reith Sans', Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro !important;
 }
 
 /* 强制隐藏 # 号链接 */
@@ -55,23 +108,42 @@ a.header-mark,
     font-weight: 400 !important;
 }
 
-/* 控制文章正文字体的颜色、字距与行距 */
-.page .single .content p {
+/* 控制文章正文字体的颜色、字号、字距与行距 */
+/* 注意 1：主题对 .content p 直接写了 font-size:1rem（相对根元素 16px），
+   所以字号必须直接作用在 p 上才会生效；写在 .content 上只会被继承、
+   而 p 自己的 1rem 会覆盖继承值，导致“调了没反应”。
+   注意 2：选择器必须写成 .single .content p，不能写 .page .single .content p。
+   因为 Hugo 的 DOM 是 <div class="page single">（两个 class 在同一个元素上），
+   而 .page .single（中间有空格=后代关系）要求 .single 嵌套在 .page 内部，
+   永远匹配不到，整条规则会全部失效。 */
+.single .content p {
     /* 1. 字距（Letter Spacing） */
-    /* 正文字距不宜过大，0.5px 到 1px 能显著提升中文的阅读呼吸感 */
+    /* 正文字距不宜过大，1px 上下能显著提升中文的阅读呼吸感 */
     letter-spacing: 0.8px !important;
 
     /* 2. 颜色（Color） */
-    /* #333333 或 #444444 是最推荐的正文颜色，比纯黑（#000）更柔和，看久了眼睛不累 */
-    color: #888 !important;
+    /* 纯黑 + 90% 不透明度，比 #000 柔和一点点，但仍接近纯黑 */
+    color: rgba(0, 0, 0, 0.9) !important;
 
-    /* 3. 行高/行间距（Line Height） */
-    /* 网页正文中，中文推荐 1.6 到 1.8 倍行高，太扁了会挤在一起很难看 */
-    line-height: 32px !important;
+    /* 3. 字号（Font Size） */
+    /* 主题默认 1rem(=16px)，这里放大一档；改成 1.25rem≈20px 更大 */
+    font-size: 18px !important;
 
-    /* 4. 段落与段落之间的上下间距（选填） */
-    /* 控制段落与段落之间的距离，1.2rem 到 1.5rem 比较适中 */
-    margin-bottom: 1.5rem !important;
+    /* 4. 行高/行间距（Line Height） */
+    /* 网页正文中，中文推荐 1.8 倍行高 */
+    line-height: 1.8 !important;
+
+    /* 5. 段落与段落之间的上下间距（选填） */
+    /* 控制段落与段落之间的距离，1.5rem 到 2rem 比较适中 */
+    margin-bottom: 1.8rem !important;
+
+    /* 6. 左右对齐（两端对齐），中文排版更整齐 */
+    text-align: justify !important;
+}
+
+/* 深色模式：把上面锁死的近黑正文颜色还原成浅色，否则深底黑字看不清 */
+[theme=dark] .single .content p {
+    color: #c9d1d9 !important;
 }
 
 .single .post-meta a, .single .post-meta a::before, .single .post-meta a::after {
@@ -125,25 +197,87 @@ a.header-mark,
     color: #c9d1d9 !important;
 }
 
+/* 目录行间距：单独固定为 1.2，只作用于目录，不影响正文 */
+.toc .toc-content {
+    line-height: 1.2 !important;
+}
+.toc .toc-content a,
+.toc .toc-content li,
+#toc-auto .toc-content,
+#toc-static .toc-content {
+    line-height: 1.2 !important;
+}
+
+/* 去掉目录左侧的竖线（主题在 #toc-auto 上设了 border-left） */
+#toc-auto {
+    border-left: none !important;
+}
+[theme=dark] #toc-auto {
+    border-left: none !important;
+}
+
+/* ================================================================
+   目录与正文解耦：独立定位
+   ----------------------------------------------------------------
+   主题的 theme.js 会按「正文右边缘」动态计算目录位置（left / maxWidth），
+   所以正文一动目录就跟着跑。这里用 position: fixed + right 把目录
+   锚定到视口右侧，彻底和正文脱钩，两个区域可各自独立调整：
+     - 正文位置/宽度：改下面 .page 的 margin-left / width / max-width
+     - 目录位置/宽度：改这里 #toc-auto 的 right / width
+   ================================================================ */
+#toc-auto {
+    position: fixed !important;     /* 固定定位，不随正文/滚动变化 */
+    left: auto !important;          /* 覆盖 JS 设置的内联 left */
+    right: 14rem !important;         /* 距视口右边的距离，越小越靠右 */
+    top: 10rem !important;          /* 距视口顶部的距离 */
+    width: auto !important;
+    max-width: 300px !important;    /* 目录最大宽度，可调 */
+    max-height: calc(100vh - 12rem);
+    overflow-y: auto;
+}
+[theme=dark] #toc-auto {
+    /* 深色模式如需单独调位置，在这里加 */
+}
+
 /* 页面正文宽度控制：覆盖主题默认宽度 */
 .page {
-    max-width: 800px !important;   /* 最大宽度，改成你想要的值 */
-    width: 50% !important;         /* 默认宽度百分比 */
-    margin-left: auto !important;
+    max-width: 720px !important;   /* 最大宽度，改成你想要的值 */
+    width: 46% !important;         /* 默认宽度百分比 */
+    margin-left: 16% !important;    /* 固定左边距（原来 auto 居中），数值越小越靠左 */
     margin-right: auto !important;
 }
 
 @media only screen and (max-width: 1440px) {
-    .page { width: 50% !important; }
+    .page { width: 46% !important; margin-left: 8% !important; }
 }
 @media only screen and (max-width: 1200px) {
-    .page { width: 45% !important; }
+    .page { width: 42% !important; margin-left: 6% !important; }
 }
 @media only screen and (max-width: 960px) {
-    .page { width: 80% !important; }
+    .page { width: 80% !important; margin-left: auto !important; }
 }
 @media only screen and (max-width: 680px) {
-    .page { width: 92% !important; }
+    .page { width: 92% !important; margin-left: auto !important; }
+}
+
+/* ================================================================
+   首页 / 归档页（posts / tags / categories / about）内容居中
+   ----------------------------------------------------------------
+   只有阅读页 .page.single 因为右侧有目录才需要左对齐；
+   其余页面（.page.home 首页、.page.archive 列表/关于页）没有目录，
+   统一居中显示。用 margin-left:auto + margin-right:auto 覆盖上面的
+   固定 margin-left，并保证两侧 auto 完全居中。
+   ================================================================ */
+.page.home,
+.page.archive {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+/* 居中页面的宽度：给个更适合居中阅读的宽度，避免百分比在宽屏过窄/过宽 */
+.page.home,
+.page.archive {
+    width: 100% !important;
+    max-width: 720px !important;
 }
 
 /* 4. 全局链接基础样式（保留你的基础设定） */
@@ -160,6 +294,7 @@ a.header-mark,
     font-size: 14px !important;
     font-family: Inter;
     font-weight: 200 !important;
+    line-height: 1.6 !important;    /* 摘要行距改正常（原来继承 html 的 3 倍行距=42px，过大） */
 }
 
 .single .content blockquote {
@@ -169,7 +304,6 @@ a.header-mark,
     padding: 40px 0 12px 16px !important;
     background: transparent !important;
     border: none !important;
-    border-left: 4px solid #d0d7de !important;
     border-radius: 0 !important;
     font-style: normal !important;
     font-weight: normal !important;
@@ -202,7 +336,6 @@ a.header-mark,
 [theme=dark] .single .content blockquote {
     background: transparent !important;
     border: none !important;
-    border-left: 4px solid #484f58 !important;
     border-radius: 0 !important;
     color: #c9d1d9 !important;
 }
@@ -218,7 +351,7 @@ a.header-mark,
 
 /* 代码块外框线：浅色灰 / 深色灰，避免白色边框 */
 .single .content .highlight {
-    border: 1px solid #d0d7de !important;
+    border: 1px solid #e8dfc8 !important;
     border-radius: 10px !important;
     overflow: hidden !important;
 }
@@ -254,7 +387,7 @@ a.header-mark,
 .single .content .highlight .chroma .code-header,
 .single .content .highlight .chroma .code-header .code-title,
 .single .content .highlight td {
-    background-color: #f8f9fa !important; /* 替换为你想要的背景色（例如 #f8f9fa 是浅灰，#1e1e1e 是深黑） */
+    background-color: #fbf7e8 !important; /* 与米白背景协调的暖色代码块底色 */
 }
 
 /* 2. 补刀：防止某些高亮样式对单行（line）单独锁死了背景色 */
@@ -432,15 +565,16 @@ a.header-mark,
 /* 普通空白 */
 .single .content .highlight .w { color: #6e7781 !important; }
 
-/* 行内 code 片段（行内 `code`，保留 GitHub 深色背景 + 圆角） */
+/* 行内 code 片段（行内 `code`，暖色背景 + 圆角） */
 .single .content code:not(pre code),
 .content code:not(pre code),
 p code:not(pre code),
 li code:not(pre code) {
     color: #24292f !important;
-    background: #f6f8fa !important;
+    background: #f7f1dc !important;
     border-radius: 6px !important;
-    padding: 0.2em 0.4em !important;
+    padding: 0.05em 0.4em !important;   /* 上下内边距收紧（原 0.2em 过大） */
+    line-height: inherit !important;     /* 跟随正文行高，避免行内代码额外撑高 */
 }
 
 /* 兜底：让没有 class 的纯文本 code（bash 等）继承 GitHub 中性色，而不是主题红色 */
@@ -475,11 +609,11 @@ pre code {
     padding: 0 !important;
 }
 
-/* 代码块整体背景微调：GitHub 的浅灰 */
+/* 代码块整体背景微调：与米白背景协调的暖色 */
 .single .content .highlight,
 .single .content .chroma,
 .single .content .highlight table {
-    background: #f6f8fa !important;
+    background: #fbf7e8 !important;
 }
 
 /* 代码块 header 继承父级背景，彻底杜绝 header 与主体之间的色差 */
@@ -591,5 +725,37 @@ pre code {
     color: #c9d1d9 !important;
     background: #181818 !important;
     border-radius: 6px !important;
-    padding: 0.2em 0.4em !important;
+    padding: 0.05em 0.4em !important;   /* 上下内边距收紧（原 0.2em 过大） */
+    line-height: inherit !important;
+}
+
+/* ================================================================
+   其余冷灰白元素统一到米白暖色系（与 body #fffcf0 协调）
+   主题这些地方默认用了 #f8f8f8 冷灰，这里覆盖为暖色。
+   ================================================================ */
+
+/* 搜索框输入背景 */
+#header-desktop .search-input,
+.search input {
+    background-color: #fbf7e8 !important;
+}
+
+/* 移动端展开菜单背景 */
+#header-mobile .header-container .menu {
+    background: #fbf7e8 !important;
+    border-top-color: #efe6cf !important;   /* 原为冷灰 #f0f0f0 */
+}
+
+/* 右下角悬浮按钮（评论 / 返回顶部） */
+.fixed-button {
+    background: #fbf7e8 !important;
+    color: #a9a292 !important;              /* 原为冷灰 #a9a9b3，改暖灰 */
+}
+
+[theme=dark] .fixed-button {
+    background: #252627 !important;
+    color: #a9a9b3 !important;
+}
+[theme=dark] #header-mobile .header-container .menu {
+    background: #252627 !important;
 }
