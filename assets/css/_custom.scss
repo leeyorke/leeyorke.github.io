@@ -21,6 +21,31 @@
     font-display: swap;
 }
 
+/* BBC Reith Sans 粗体字重（用于 header 标题与菜单的 600 加粗） */
+@font-face {
+    font-family: 'BBC Reith Sans';
+    src: url('/fonts/BBCReithSans_Bd.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Visuelt Pro（header 专用：站名 + 顶部导航菜单） */
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('/fonts/visuelt-regular-pro.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('/fonts/visuelt-medium-pro.woff2') format('woff2');
+    font-weight: 500 700;   /* medium 覆盖 500-700，让标题的 600 加粗直接命中 medium 字形 */
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --toc-font-size: 14px;          /* 统一控制目录字号 */
     --toc-weight-normal: 300;      /* 未激活时的字重（常规） */
@@ -298,6 +323,7 @@ a.header-mark,
 }
 
 .single .content blockquote {
+    font-family: "BBC Reith Sans", "Songti SC", "SimSun", "STSong", serif !important;
     position: relative !important;
     display: block !important;
     margin: 16px 0 16px 0 !important;
@@ -345,8 +371,25 @@ a.header-mark,
 }
 
 .header-title {
-    font-weight: 200 !important;
-    font-size: 18px !important;
+    font-family: 'Visuelt Pro', 'BBC Reith Sans', system-ui, sans-serif !important;
+    font-weight: 700 !important;   /* Visuelt 仅 medium 字形，700 触发合成加粗，比菜单(600)更突出 */
+    font-size: 22px !important;    /* 站名放大，与菜单拉开层次 */
+}
+
+/* 顶部导航菜单（posts/tags/categories/about）字体加粗 */
+#header-desktop .menu,
+#header-desktop .menu .menu-item a {
+    font-family: 'Visuelt Pro', 'BBC Reith Sans', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* 文章列表卡片：去掉作者行（leeyorke/发布于/归类）和「阅读全文」链接
+   只作用于列表的 .summary 容器，不影响文章详情页的 .post-meta/.post-footer */
+.single.summary .post-meta {
+    display: none !important;
+}
+.single.summary .post-footer {
+    display: none !important;
 }
 
 /* 代码块外框线：浅色灰 / 深色灰，避免白色边框 */
@@ -566,6 +609,10 @@ a.header-mark,
 .single .content .highlight .w { color: #6e7781 !important; }
 
 /* 行内 code 片段（行内 `code`，暖色背景 + 圆角） */
+/* 注意：主题给 code 设了 display:inline-block（_partial/_single/_code.scss:2），
+   盒子高度 = line-height × font-size 自行计算。若 line-height 继承 html 的 3，
+   或随父级上下文/字体回退变化，各处盒子就会胖瘦不一。
+   这里锁死固定 line-height + display + 基线对齐 + 固定字号，让高度完全一致。 */
 .single .content code:not(pre code),
 .content code:not(pre code),
 p code:not(pre code),
@@ -573,8 +620,13 @@ li code:not(pre code) {
     color: #24292f !important;
     background: #f7f1dc !important;
     border-radius: 6px !important;
-    padding: 0.05em 0.4em !important;   /* 上下内边距收紧（原 0.2em 过大） */
-    line-height: inherit !important;     /* 跟随正文行高，避免行内代码额外撑高 */
+    padding: 2px 6px !important;        /* 固定像素内边距，不随字号/字体缩放 */
+    display: inline-block !important;    /* 与主题一致，显式锁定盒子模型 */
+    line-height: 1.4 !important;         /* 固定行高，脱离 html{line-height:3} 与父级影响 */
+    font-size: 0.875rem !important;      /* 固定字号，避免继承不同父级字号导致高度差异 */
+    vertical-align: baseline !important; /* 基线对齐，避免行内盒子上下错位 */
+    font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important; /* 纯拉丁等宽栈，杜绝含全角/CJK 字符时回退到中文字体把盒子撑高 */
+    font-variant-ligatures: none !important; /* 关连字，避免连字改变字形度量 */
 }
 
 /* 兜底：让没有 class 的纯文本 code（bash 等）继承 GitHub 中性色，而不是主题红色 */
@@ -725,8 +777,13 @@ pre code {
     color: #c9d1d9 !important;
     background: #181818 !important;
     border-radius: 6px !important;
-    padding: 0.05em 0.4em !important;   /* 上下内边距收紧（原 0.2em 过大） */
-    line-height: inherit !important;
+    padding: 2px 6px !important;        /* 固定像素内边距 */
+    display: inline-block !important;    /* 与浅色一致，锁定盒子模型 */
+    line-height: 1.4 !important;         /* 固定行高，脱离 html{line-height:3} */
+    font-size: 0.875rem !important;      /* 固定字号 */
+    vertical-align: baseline !important; /* 基线对齐 */
+    font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important; /* 纯拉丁等宽栈 */
+    font-variant-ligatures: none !important; /* 关连字 */
 }
 
 /* ================================================================
