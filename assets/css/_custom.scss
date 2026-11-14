@@ -734,10 +734,14 @@ pre code {
    主题这些地方默认用了 #f8f8f8 冷灰，这里覆盖为暖色。
    ================================================================ */
 
-/* 搜索框输入背景 */
+/* 搜索框输入背景（仅浅色模式；深色模式在下方还原深色） */
 #header-desktop .search-input,
 .search input {
     background-color: #fbf7e8 !important;
+}
+[theme=dark] #header-desktop .search-input,
+[theme=dark] .search input {
+    background-color: #252627 !important;   /* 深色模式还原深色，避免搜索按钮发白 */
 }
 
 /* 移动端展开菜单背景 */
