@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/posts/</link>
         <description>所有文章 | leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Mon, 02 Nov 2026 09:05:14 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 22 Nov 2026 11:42:53 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>初次搭建梯子记录</title>
+    <link>https://leeyorke.github.io/2026-11-22/</link>
+    <pubDate>Sun, 22 Nov 2026 11:42:53 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-11-22/</guid>
+    <description><![CDATA[01 购买 VPS 购买 raksmart 的最便宜的一档2美元一月，支持支付宝付款。 选择公钥登录。然后配置安全组，记得放行443端口。 重置一下密码。 02 安装 xray-core 之前设置后会]]></description>
+</item>
+<item>
     <title>安娜·陀思妥耶夫斯卡娅谈幸福婚姻的秘密</title>
     <link>https://leeyorke.github.io/2026-11-02/</link>
     <pubDate>Mon, 02 Nov 2026 09:05:14 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>leeyorke</author>
     <guid>https://leeyorke.github.io/2026-08-22/</guid>
     <description><![CDATA[本次记录两个对 deepseek harness 的修改： 把deepseek harness 3080 端口暴漏到信任网段使之可以多端访问。 支持在手机、iPad上也可以选择 workspace。 CHANGE 1]]></description>
-</item>
-<item>
-    <title>我读如何超过大多数人</title>
-    <link>https://leeyorke.github.io/2026-08-19/</link>
-    <pubDate>Wed, 19 Aug 2026 14:21:21 &#43;0800</pubDate>
-    <author>leeyorke</author>
-    <guid>https://leeyorke.github.io/2026-08-19/</guid>
-    <description><![CDATA[谈谈自律 今天刷推的时候，偶然刷到了一篇有人分享的帖子，介绍左耳朵耗子陈皓的文章 《如何超过大多数人》。立马就打开浏览器拜读了一番，2019年的]]></description>
 </item>
 </channel>
 </rss>
