@@ -4,7 +4,15 @@
         <link>https://leeyorke.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</link>
         <description>技术教程 - 分类 - leeyorke的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>lee_yorke@outlook.com (leeyorke)</managingEditor>
-            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>lee_yorke@outlook.com (leeyorke)</webMaster><lastBuildDate>Sun, 22 Nov 2026 11:42:53 &#43;0800</lastBuildDate><atom:link href="https://leeyorke.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>初次搭建梯子记录</title>
+    <link>https://leeyorke.github.io/2026-11-22/</link>
+    <pubDate>Sun, 22 Nov 2026 11:42:53 &#43;0800</pubDate>
+    <author>leeyorke</author>
+    <guid>https://leeyorke.github.io/2026-11-22/</guid>
+    <description><![CDATA[01 购买 VPS 购买 raksmart 的最便宜的一档2美元一月，支持支付宝付款。 选择公钥登录。然后配置安全组，记得放行443端口。 重置一下密码。 02 安装 xray-core 之前设置后会]]></description>
+</item>
+<item>
     <title>PhotoShop CS6之制作圆角图片</title>
     <link>https://leeyorke.github.io/2026-08-25/</link>
     <pubDate>Tue, 25 Aug 2026 11:40:19 &#43;0800</pubDate>

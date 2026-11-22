@@ -3,8 +3,8 @@ title: "初次搭建梯子记录"
 date: 2026-11-22T11:42:53+08:00
 lastmod:
 draft: false
-tags:
-categories:
+tags: ["raksmart", "xray", "梯子"]
+categories: ["技术教程"]
 description: ""
 ---
 
