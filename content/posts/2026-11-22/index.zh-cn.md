@@ -82,3 +82,38 @@ proxies:
       support-x25519mlkem768: true
 ```
 完整最简配置模板：[clash-template-from-vless.yaml](https://raw.githubusercontent.com/leeyorke/rules/refs/heads/main/template/clash-template-from-vless.yaml)
+
+**如何加强伪装性**
+
+1. 改走443端口，高位端口容易被封。
+2. 屏蔽回国流量。具体操作：
+  ```bash
+  python3 -c 'import json; p="/usr/local/etc/xray/config.json"; d=json.load(open(p)); d.setdefault("outbounds",[]); (any(o.get("tag")=="block" for o in d["outbounds"]) or d["outbounds"].append({"protocol":"blackhole","tag":"block"})); r=d.setdefault("routing",{}); r["domainStrategy"]="IPIfNonMatch"; rules=r.setdefault("rules",[]); block_rules=[{"type":"field","ip":["geoip:cn"],"outboundTag":"block"},{"type":"field","domain":["geosite:cn"],"outboundTag":"block"}]; r["rules"]=[x for x in block_rules if x not in rules]+rules; json.dump(d,open(p,"w"),indent=2,ensure_ascii=False)'
+
+  python3 -m json.tool /usr/local/etc/xray/config.json > /dev/null
+  ```
+  无报错输出说明 JSON 格式完整有效。xray -test -c /usr/local/etc/xray/config.json 检查配置合法性，再执行 systemctl restart xray。验证方式： xray -test 提示 Configuration OK，且 systemctl status xray 显示 active (running) 即生效。
+
+**高峰期速度慢怎么优化**
+
+把 TCP 拥塞控制算法改成 bbr。
+```bash
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+sysctl -p
+sysctl net.ipv4.tcp_congestion_control
+```
+如果还是 cubic，说明内核不支持（BBR 需 Linux 4.9+），运行 uname -r 确认。
+
+BBR 和 cubic 的优势与劣势
+
+BBR（基于带宽/时延测量）
+
+优势：抗随机丢包强（丢包率 1%~5% 基本不掉速），高延迟/高带宽链路吞吐高
+劣势：早期版本对低延迟局域网（RTT<20ms）可能有更高重传；抢占带宽较激进，与 CUBIC 混跑时可能挤占对方；需内核 4.9+
+
+CUBIC（基于丢包）
+
+优势：行为温和、公平性好、与旧系统兼容，局域网表现稳定；几乎所有系统默认支持
+劣势：丢包即降速，对随机丢包敏感；高 BDP 链路（如跨国、卫星）吞吐量明显低于 BBR
+一句话：链路好、丢包少时两者差不多；链路差（跨洋、无线网络）选 BBR。
